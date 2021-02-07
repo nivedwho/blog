@@ -17,7 +17,7 @@
 <h2 id="cyclegan-model">CycleGAN Model</h2>
 <p>Generative Adversarial Networks were firstly introduced by Ian Goodfellow et.al[6], where they basically proposed an adversarial networks consisting of a Generator and a Discriminator. Generator as the name suggests, continuously generates output and the objective of the discriminator is to determine whether this output is real or fake. CycleGAN is basically following the idea but instead of using a single Generator and Discriminator, two of each is used. If we have two image domains X and Y (day and night), CycleGAN consists of a Generator G : X -&gt; Y, the second Generator F: Y -&gt; X and two Discriminator Dx and Dy. <br>
 Firstly an image of either of the domain(say X) is taken and is fed into G that generates an image of Domain Y, this image is fed into both Dy and F. Dy classifies it as real or fake, thus optimizing G (Adversarial Loss), whereas F takes in the output of G as the input, and generates an image of domain X known as the reconstructed image, which should be the same as the original input image (Cycle Loss). We also pass an image of domain Y to G to calculate the identity loss. Similar process is repeated by taking in an image from domain Y as the input.<br>
-<img  src="https://github.com/supertramp2/Blog/content/Images/base.png"
+<img  src="https://github.com/supertramp2/blog/tree/main/Images/base.png"
         alt="Base Model"/></p>
 <p>The above diagram shows the architecture of the CycleGAN Model along with the three loss functions - Adversarial Loss, Content Loss and Identity Loss.</p>
 <h4 id="adversarial-loss">Adversarial loss</h4>
@@ -29,7 +29,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 <h2 id="my-contributions">My Contributions</h2>
 <h4 id="new-architecture">New Architecture</h4>
 <p>One big disadvantage of CycleGAN is training them is really difficult and the training time is too long, thanks to its multiple generators and discriminators.So I eliminated the use of Discriminator Dy. This did not affect the output quality by much rather decreased the training time. The modified architecture is shown in the below diagram.<br>
-<img  src="https://github.com/supertramp2/Blog/content/Images/new.png"
+<img  src="https://github.com/supertramp2/blog/tree/main/Images/new.png"
         alt="Modified Model"/></p>
 <h4 id="improved-identity-loss">Improved Identity Loss</h4>
 <p>Layer of pretrained VGG-19 Network was used for feature extraction and the loss was calculated on the basis of these features. This improved the quality of generated outputs.</p>
@@ -37,14 +37,14 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 <p>Both the original and modified model was trained on Monet-Photos Dataset and a Day-Night image dataset, which I had created by combining different images from publicly available sources. Both the original and modified models were trained on these datasets and I was able to Translate photos to paintings, Night time images to Day time images. Additionally I also wanted to compare the two models using metrics such as MSE, PSNR and SSIM and therefore created a dataset with some random colored photos, then took another set of photos and converted them to grayscale.</p>
 <h2 id="evaluation">Evaluation</h2>
 <p>Both the models were then trained to translate a colored image to grayscale, and the generated image was compared with the grayscale version of the input image. I found that usage of VGG network gave better results compared to the original one, but there was some reduction in quality when I modified the architecture. Still any reduction in training time is always a good thing especially in the case deep networks such as CycleGANs.
-<img  src="https://github.com/supertramp2/Blog/content/Images/eval.png"
+<img  src="https://github.com/supertramp2/blog/tree/main/Images/eval.png"
         alt="Evaluation Table"/></p>
 <h2 id="results">Results</h2>
-<p><img  src="https://github.com/supertramp2/Blog/content/Images/photo.jpg"
+<p><img  src="https://github.com/supertramp2/blog/tree/main/Images/photo.jpg"
         alt="Monet"/><br>
-<img  src="https://github.com/supertramp2/Blog/content/Images/daynight.jpg"
+<img  src="https://github.com/supertramp2/blog/tree/main/Images/daynight.jpg"
         alt="DayNight"/><br>
-<img  src="https://github.com/supertramp2/Blog/content/Images/nightday.jpg"
+<img  src="https://github.com/supertramp2/blog/tree/main/Images/nightday.jpg"
         alt="DayNight"/></p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/gans/>GANs</a></section>
 </div>
 <div class="article bottom"></div></section><section id="footer"><div class="footer-wrap">
