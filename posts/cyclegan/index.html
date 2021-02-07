@@ -37,7 +37,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 <p>Both the original and modified model was trained on Monet-Photos Dataset and a Day-Night image dataset, which I had created by combining different images from publicly available sources. Both the original and modified models were trained on these datasets and I was able to Translate photos to paintings, Night time images to Day time images. Additionally I also wanted to compare the two models using metrics such as MSE, PSNR and SSIM and therefore created a dataset with some random colored photos, then took another set of photos and converted them to grayscale.</p>
 <h2 id="evaluation">Evaluation</h2>
 <p>Both the models were then trained to translate a colored image to grayscale, and the generated image was compared with the grayscale version of the input image. I found that usage of VGG network gave better results compared to the original one, but there was some reduction in quality when I modified the architecture. Still any reduction in training time is always a good thing especially in the case deep networks such as CycleGANs.
-<p><img src="../Images/eval.png" alt="Evaluation Table"></p>
+<p><img src="/Blog/Images/eval.png" alt="Evaluation Table"></p>
 <h2 id="results">Results</h2>
 <p><img  src="https://github.com/supertramp2/blog/tree/main/Images/photo.jpg"
         alt="Monet"/><br>
