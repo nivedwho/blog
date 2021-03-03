@@ -5,19 +5,51 @@
     <description>Recent content on Nived&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://supertramp2.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Using GANs to create art :o</title>
+      <title>Summiting mountains using RL.</title>
+      <link>http://supertramp2.github.io/blog/posts/climbingcars/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/climbingcars/</guid>
+      <description>&lt;p&gt;Under Construction :p&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>StyleGAN - A very popular GAN</title>
+      <link>http://supertramp2.github.io/blog/posts/stylegan/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/stylegan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SinGANs - a GAN that trains on a single image</title>
+      <link>http://supertramp2.github.io/blog/posts/singan/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using GANs to create &#39;art&#39;</title>
       <link>http://supertramp2.github.io/blog/posts/cyclegan/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://supertramp2.github.io/blog/posts/cyclegan/</guid>
-      <description>&lt;p&gt;A project reproducing the results of &lt;a href=&#34;https://arxiv.org/abs/1703.10593&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;CycleGAN paper&lt;/a&gt;
+      <description>&lt;p&gt;A project reproducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1703.10593&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks&amp;rdquo;&lt;/a&gt;
  and making some additional changes to improve its performance.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/CycleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I was introduced to the idea &amp;ldquo;Image to Image Translation&amp;rdquo; by a Kaggle competition named &lt;a href=&#34;https://www.kaggle.com/c/gan-getting-started&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;I&amp;rsquo;m Something of a Painter Myself&amp;rdquo;&lt;/a&gt;
 . The competition was about creating a GAN model that can translate a given set of digital photos to paintings. After going through almost every publicly available notebook in Kaggle and reading many different articles and the &lt;a href=&#34;https://arxiv.org/abs/1703.10593&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;CycleGAN paper&lt;/a&gt;
@@ -51,12 +83,101 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 &lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/eval.png&#34;
         alt=&#34;Evaluation Table&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/photo.jpg&#34;
+&lt;p&gt;The below images shows a few of the results I obtained.
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/photo.jpg&#34;
         alt=&#34;Monet&#34;/&gt;&lt;br&gt;
 &lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/daynight.jpg&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;br&gt;
 &lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/nightday.jpg&#34;
-        alt=&#34;DayNight&#34;/&gt;&lt;/p&gt;</description>
+        alt=&#34;DayNight&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;The model took me to the 4th place in the kaggle competition mentioned earlier, and the model with a single discriminator had almost the same score as the original one, even though there was improvement to the score.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using GANs for Single Image Super Resolution</title>
+      <link>http://supertramp2.github.io/blog/posts/srgan/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/srgan/</guid>
+      <description>&lt;p&gt;A project reproducing the results of the paper &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network&amp;rdquo;&lt;/a&gt;
+ and making some additional changes to improve its performance.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Single image super resolution is the process of recovering high-resolution (HR) images from a single corresponding low-resolution (LR) image. It demands addition of missing information present in the image. It is a field where active research is taking place and in the past years there are several deep learning models proposed. Few of these models also use Generative Adversarial Networks and one such model is known as SRGAN. GANs consists of a generator and a discriminator. Generator as the name suggests, continuously generates an output which maps a noise z to the input and the objective of the discriminator is to determine whether this output is real or generated. This why the model is known as an adversarial network. In the case of single image super Resolution, the input to generator is a Low Resolution image and the generator outputs a High Resolution image which is then passed onto the Discriminator estimates the probability the image as a generated image or a real one. In other words, the primary aim of the generator is to fool the discriminator and this is what makes Generative Adversarial Networks generate visually appealing images unlike the previously developed Deep Learning approaches.&lt;/p&gt;
+&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
+&lt;p&gt;The model should be able to increase the resolution of an input sample by 4 times.&lt;/p&gt;
+&lt;h2 id=&#34;srgan-model&#34;&gt;SRGAN Model&lt;/h2&gt;
+&lt;p&gt;RGAN consists of a Generator and a Discriminator, where the Generator takes in a low resolution image as input and output a high resolution image and the Discriminator takes in this high resolution image and classifies the image as real or generated. When Generative Adversarial Networks was introduced for the first time in, the authors of the paper drew an analogy comparing generators and discriminators with counterfeiters and police. The counterfeiters generate fake currencies and the aim of the police is to identify the fake ones and catch the counterfeiters, once caught the counterfeiters will try generating better currencies that will reduce the chances of them getting caught. Similarly in the case of GANs both the generator and the discriminator improves their performance with time and the loss function used for this purpose is known as the Adversarial loss function. \linebreak
+The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
+ also computes the content loss by comparing the generated high resolution image and the original high resolution image. Since the use of traditional methods such as Mean Square Error between the two images for calculating loss functions gave poor results, the authors used high level feature maps of the pretrained VGG 19 networks for extracting features and comparing the Generated and the Original Image. In the &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
+, SRGAN model was evaluated using various metrics including mean opinion scores and the model was able to achieve state of the art results. We additionally introduced a new loss function named Identity Loss functions that improved the performance of the generator for generating images with higher perceptual quality. For computing identity loss, during the training process we pass the HR image present in the dataset to the Generator and the output of this Generator is compared with the original image similar to how we computed the content loss. Ideally this generated image should be exactly the same as the input image.&lt;br&gt;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/block.png&#34;
+        alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/model.png&#34;
+        alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;loss-functions&#34;&gt;Loss Functions&lt;/h2&gt;
+&lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
+&lt;p&gt;When the Generator G tries to translate input image from domain X to a similar looking image in domain Y, while the Discriminator Dy aims to distinguish images from both the domains. The authors of the original refers to this process as a minimax game where the Discriminator is trying to maximize the probability of correct classification and the Generator is trying to minimize the same. Adversarial loss encourages the generators to generate visually appealing images, which happens to be one of the biggest upside of using GANs.&lt;/p&gt;
+&lt;h4 id=&#34;content-loss&#34;&gt;Content loss&lt;/h4&gt;
+&lt;p&gt;The  adversarial  loss  alone  cannot  produce  good  results.The  content  loss  compares  the  generated  HR  image  withthe original HR image. A number of deep learning methodshave used MSE loss between the two images but it fails toproduce  good  quality  results.  The  authors  of  the  paper have replaced the loss function by faking use of the feature maps of pretrained VGG-19 network to calculate the contentloss. During training time, the difference between the generated image and the original image present in the dataset is taken as the content loss.&lt;/p&gt;
+&lt;h4 id=&#34;identity-loss&#34;&gt;Identity loss&lt;/h4&gt;
+&lt;p&gt;I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/base.png&#34;
+        alt=&#34;Base Model&#34;/&gt;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/celebA.png&#34;
+        alt=&#34;Base Model&#34;/&gt;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/ourout.png&#34;
+        alt=&#34;Base Model&#34;/&gt;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/newplot.png&#34;
+        alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>First neural netowork on MNSIT dataset.</title>
+      <link>http://supertramp2.github.io/blog/posts/handwriting/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/handwriting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Masking stuffs in an image</title>
+      <link>http://supertramp2.github.io/blog/posts/masking/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/masking/</guid>
+      <description>&lt;p&gt;A project that hides important text/numbers present in an image.&lt;/p&gt;
+&lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
+&lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained. The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Document Scanner that works.</title>
+      <link>http://supertramp2.github.io/blog/posts/docscan/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/docscan/</guid>
+      <description>&lt;p&gt;A Document scanner made using Python and  OpenCV.&lt;/p&gt;
+&lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
+&lt;p&gt;This was one of my first ever projects in the field of computer vision. The scanner scans documents using the mobile camera, and the frames were sent to my computer using the &amp;lsquo;IP Camera&amp;rsquo; application. The frames recieved are then captured using OpenCV. Automatic contour detection was not at all effective and did not work for most of the time, so the edge points of the pages are marked by the user and then the image is cropped and warped (Perspective transform by OpenCV). After this the image is binarized and passed through some filters, to enhance the texts present in the document. Using the PIL library, multiple images of pages are finally saved as a single pdf file. &lt;!-- raw HTML omitted --&gt;
+In conclusion its a scanner that never fails and doesn&amp;rsquo;t eat up space like the other applications.
+Later I also published a &lt;a href=&#34;https://py.plainenglish.io/document-scanner-python-64b73b0fed31&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Medium blog&lt;/a&gt;
+ on this project and it got some decent amount of views :)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://supertramp2.github.io/blog/posts/colophon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/colophon/</guid>
+      <description></description>
     </item>
     
   </channel>
