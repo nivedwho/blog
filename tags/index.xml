@@ -59,7 +59,7 @@
 &lt;h2 id=&#34;cyclegan-model&#34;&gt;CycleGAN Model&lt;/h2&gt;
 &lt;p&gt;Generative Adversarial Networks were firstly introduced by Ian Goodfellow et.al[6], where they basically proposed an adversarial networks consisting of a Generator and a Discriminator. Generator as the name suggests, continuously generates output and the objective of the discriminator is to determine whether this output is real or fake. CycleGAN is basically following the idea but instead of using a single Generator and Discriminator, two of each is used. If we have two image domains X and Y (day and night), CycleGAN consists of a Generator G : X -&amp;gt; Y, the second Generator F: Y -&amp;gt; X and two Discriminator Dx and Dy. &lt;br&gt;
 Firstly an image of either of the domain(say X) is taken and is fed into G that generates an image of Domain Y, this image is fed into both Dy and F. Dy classifies it as real or fake, thus optimizing G (Adversarial Loss), whereas F takes in the output of G as the input, and generates an image of domain X known as the reconstructed image, which should be the same as the original input image (Cycle Loss). We also pass an image of domain Y to G to calculate the identity loss. Similar process is repeated by taking in an image from domain Y as the input.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/base.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/base.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The above diagram shows the architecture of the CycleGAN Model along with the three loss functions - Adversarial Loss, Content Loss and Identity Loss.&lt;/p&gt;
 &lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
@@ -71,7 +71,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 &lt;h2 id=&#34;my-contributions&#34;&gt;My Contributions&lt;/h2&gt;
 &lt;h4 id=&#34;new-architecture&#34;&gt;New Architecture&lt;/h4&gt;
 &lt;p&gt;One big disadvantage of CycleGAN is training them is really difficult and the training time is too long, thanks to its multiple generators and discriminators.So I eliminated the use of Discriminator Dy. This did not affect the output quality by much rather decreased the training time. The modified architecture is shown in the below diagram.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/new.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/new.png?raw=true&#34;
         alt=&#34;Modified Model&#34;/&gt;&lt;/p&gt;
 &lt;h4 id=&#34;improved-identity-loss&#34;&gt;Improved Identity Loss&lt;/h4&gt;
 &lt;p&gt;Layer of pretrained VGG-19 Network was used for feature extraction and the loss was calculated on the basis of these features. This improved the quality of generated outputs.&lt;/p&gt;
@@ -79,15 +79,15 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 &lt;p&gt;Both the original and modified model was trained on Monet-Photos Dataset and a Day-Night image dataset, which I had created by combining different images from publicly available sources. Both the original and modified models were trained on these datasets and I was able to Translate photos to paintings, Night time images to Day time images. Additionally I also wanted to compare the two models using metrics such as MSE, PSNR and SSIM and therefore created a dataset with some random colored photos, then took another set of photos and converted them to grayscale.&lt;/p&gt;
 &lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
 &lt;p&gt;Both the models were then trained to translate a colored image to grayscale, and the generated image was compared with the grayscale version of the input image. I found that usage of VGG network gave better results compared to the original one, but there was some reduction in quality when I modified the architecture. Still any reduction in training time is always a good thing especially in the case deep networks such as CycleGANs.
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/eval.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/eval.png?raw=true&#34;
         alt=&#34;Evaluation Table&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
 &lt;p&gt;The below images shows a few of the results I obtained.
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/photo.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/photo.jpg?raw=true&#34;
         alt=&#34;Monet&#34;/&gt;&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/daynight.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/daynight.jpg?raw=true&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/nightday.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/nightday.jpg?raw=true&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The model took me to the 4th place in the kaggle competition mentioned earlier, and the model with a single discriminator had almost the same score as the original one, even though there was improvement to the score.&lt;/p&gt;</description>
     </item>
@@ -112,10 +112,10 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
  also computes the content loss by comparing the generated high resolution image and the original high resolution image. Since the use of traditional methods such as Mean Square Error between the two images for calculating loss functions gave poor results, the authors used high level feature maps of the pretrained VGG 19 networks for extracting features and comparing the Generated and the Original Image. In the &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
 , SRGAN model was evaluated using various metrics including mean opinion scores and the model was able to achieve state of the art results. We additionally introduced a new loss function named Identity Loss functions that improved the performance of the generator for generating images with higher perceptual quality. For computing identity loss, during the training process we pass the HR image present in the dataset to the Generator and the output of this Generator is compared with the original image similar to how we computed the content loss. Ideally this generated image should be exactly the same as the input image.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/block.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/block.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/model.png&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/model.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;loss-functions&#34;&gt;Loss Functions&lt;/h2&gt;
 &lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
@@ -125,13 +125,13 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
 &lt;h4 id=&#34;identity-loss&#34;&gt;Identity loss&lt;/h4&gt;
 &lt;p&gt;I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/srgan_base.jpg&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/srgan_base.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/celebA.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/celebA.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/ourout.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/ourout.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/newplot.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/newplot.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;</description>
     </item>
     
