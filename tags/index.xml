@@ -125,11 +125,11 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
 &lt;h4 id=&#34;identity-loss&#34;&gt;Identity loss&lt;/h4&gt;
 &lt;p&gt;I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/base.png&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/srgan_base.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/celebA.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/celebA.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/ourout.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/ourout.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
 &lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/newplot.png&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;</description>
