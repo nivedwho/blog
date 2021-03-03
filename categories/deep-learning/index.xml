@@ -137,25 +137,65 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
     </item>
     
     <item>
-      <title>First neural netowork on MNSIT dataset.</title>
+      <title>Working with CNN on MNIST dataset.</title>
       <link>http://supertramp2.github.io/blog/posts/handwriting/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://supertramp2.github.io/blog/posts/handwriting/</guid>
-      <description>&lt;p&gt;A basic Covolution Neural Network for recognizing images of hadwritten digits.&lt;/p&gt;
-&lt;p&gt;###About the project
-The MNIST dataset is a popular containing a large number of images of handwritten digits.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.&lt;/p&gt;
+&lt;h3 id=&#34;about-the-project&#34;&gt;About the project&lt;/h3&gt;
+&lt;p&gt;The MNIST dataset is a popular containing a large number of images of handwritten digits. The figures shown below are plotted using matplotlib and it shows the number of images per digit in each training and validation set.
+&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/digits.png?raw=true&#34;
+        alt=&#34;Base Model&#34;/&gt;
+&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/digitsval.png?raw=true&#34;
+        alt=&#34;Base Model&#34;/&gt;
+The training set is labelled, which means that for each image the digit present in the image will be provided as a label. The validation set will not contain these labels and the goal of the CNN model is to predict them with maximum accuracy.&lt;/p&gt;
+&lt;h3 id=&#34;convolution-network&#34;&gt;Convolution network&lt;/h3&gt;
+&lt;p&gt;The model was implemented using Keras and the model is a sequential model. The model consists of :-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 Convolutional Blocks - Contains a 2 &lt;a href=&#34;https://keras.io/api/layers/convolution_layers/convolution2d/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Conv2D&lt;/a&gt;
+ layers with &lt;a href=&#34;https://keras.io/api/layers/activation_layers/leaky_relu/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;LeakyReLu&lt;/a&gt;
+ as activation layer, &lt;a href=&#34;https://keras.io/api/layers/pooling_layers/max_pooling2d/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;MaxPool2D&lt;/a&gt;
+ layer and a &lt;a href=&#34;https://keras.io/api/layers/core_layers/#dropout&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Dropout layer&lt;/a&gt;
+.&lt;/li&gt;
+&lt;li&gt;Flatten Layer&lt;/li&gt;
+&lt;li&gt;Dense Layer&lt;/li&gt;
+&lt;li&gt;And finally the Output layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What are all these you ask? Well the job of the network is to understand the basic trait of each digit, a feature that will be common irrespective of the style of handwriting. Now all these mentioned layers are a part of this process and read more about each layer and its  functionalities &lt;a href=&#34;https://www.upgrad.com/blog/basic-cnn-architecture/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/CNNArch.png?raw=true&#34;
+        alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;After this the learning rate is set to 0.001, sparce_categorical_crossentropy is used as the loss function and the optimizer for the network is set as adam.&lt;/p&gt;
+&lt;p&gt;Once this much is done training can be started. The below plot shows the increase in accuracy and decrease in loss value with training time.
+&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/PlotCNN.png?raw=true&#34;
+        alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Masking stuffs in an image</title>
+      <title>Protecting privacy using PyTesseract</title>
       <link>http://supertramp2.github.io/blog/posts/masking/</link>
-      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://supertramp2.github.io/blog/posts/masking/</guid>
       <description>&lt;p&gt;A project that masks out important text/numbers present in an image.&lt;/p&gt;
 &lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
-&lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained. The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;</description>
+&lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained.&lt;/p&gt;
+&lt;p&gt;The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;
+&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/supertramp2/AadharMasking&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Colophon</title>
+      <link>http://supertramp2.github.io/blog/posts/colophon/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/colophon/</guid>
+      <description>&lt;p&gt;About the making of this &lt;a href=&#34;https://supertramp2.github.io/blog/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;blog website&lt;/a&gt;
+ and my &lt;a href=&#34;https://supertramp2.github.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;main portfolio page&lt;/a&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -166,19 +206,12 @@ The MNIST dataset is a popular containing a large number of images of handwritte
       <guid>http://supertramp2.github.io/blog/posts/docscan/</guid>
       <description>&lt;p&gt;A Document scanner made using Python and  OpenCV.&lt;/p&gt;
 &lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
-&lt;p&gt;This was one of my first ever projects in the field of computer vision. The scanner scans documents using the mobile camera, and the frames were sent to my computer using the &amp;lsquo;IP Camera&amp;rsquo; application. The frames recieved are then captured using OpenCV. Automatic contour detection was not at all effective and did not work for most of the time, so the edge points of the pages are marked by the user and then the image is cropped and warped (Perspective transform by OpenCV). After this the image is binarized and passed through some filters, to enhance the texts present in the document. Using the PIL library, multiple images of pages are finally saved as a single pdf file. &lt;!-- raw HTML omitted --&gt;
-In conclusion its a scanner that never fails and doesn&amp;rsquo;t eat up space like the other applications.
+&lt;p&gt;This was one of my first ever projects in the field of computer vision. The scanner scans documents using the mobile camera, and the frames were sent to my computer using the &amp;lsquo;IP Camera&amp;rsquo; application. The frames recieved are then captured using OpenCV. Automatic contour detection was not at all effective and did not work for most of the time, so the edge points of the pages are marked by the user and then the image is cropped and warped (Perspective transform by OpenCV). After this the image is binarized and passed through some filters, to enhance the texts present in the document. Using the PIL library, multiple images of pages are finally saved as a single pdf file.&lt;/p&gt;
+&lt;p&gt;In conclusion its a scanner that never fails and doesn&amp;rsquo;t eat up space like the other applications.
 Later I also published a &lt;a href=&#34;https://py.plainenglish.io/document-scanner-python-64b73b0fed31&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Medium blog&lt;/a&gt;
- on this project and it got some decent amount of views :)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://supertramp2.github.io/blog/posts/colophon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://supertramp2.github.io/blog/posts/colophon/</guid>
-      <description></description>
+ on this project and it got some decent amount of views :)&lt;/p&gt;
+&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/supertramp2/Document-Scanner-Python&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
+&lt;/p&gt;</description>
     </item>
     
   </channel>

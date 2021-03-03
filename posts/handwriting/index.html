@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>First neural netowork on MNSIT dataset.&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.25016403f866c4082f80e205de1efeb560e52c93535070b96b466132683bb44487a0057d0aada20d478abc9733966aa1.css" integrity="sha384-JQFkA/hmxAgvgOIF3h7&#43;tWDlLJNTUHC5a0ZhMmg7tESHoAV9Cq2iDUeKvJczlmqh"><meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="First neural netowork on MNSIT dataset." /><body><section id="header">
+<meta name="supported-color-schemes" content="light dark"><title>Working with CNN on MNIST dataset.&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.b11594c6612f22d06ea85519c5d587cd8cac49aa72c7d68a3f9cdfeaffc7e2cf79b571632d1bbb436a3e774e57de52c9.css" integrity="sha384-sRWUxmEvItBuqFUZxdWHzYysSapyx9aKP5zf6v/H4s95tXFjLRu7Q2o&#43;d05X3lLJ"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Working with CNN on MNIST dataset." /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">My Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">First neural netowork on MNSIT dataset.</h1><p class="article date"> </p></section><article class="article markdown-body"><p>A basic Covolution Neural Network for recognizing images of hadwritten digits.</p>
-<p>###About the project
-The MNIST dataset is a popular containing a large number of images of handwritten digits.</p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/mnist/>MNIST</a><a class="category" href=/blog/categories/cnn/>CNN</a></section>
+    <h1 class="article title">Working with CNN on MNIST dataset.</h1><p class="article date"> </p></section><article class="article markdown-body"><p>Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.</p>
+<h3 id="about-the-project">About the project</h3>
+<p>The MNIST dataset is a popular containing a large number of images of handwritten digits. The figures shown below are plotted using matplotlib and it shows the number of images per digit in each training and validation set.
+<img  src="https://github.com/supertramp2/Images/blob/main/digits.png?raw=true"
+        alt="Base Model"/>
+<img  src="https://github.com/supertramp2/Images/blob/main/digitsval.png?raw=true"
+        alt="Base Model"/>
+The training set is labelled, which means that for each image the digit present in the image will be provided as a label. The validation set will not contain these labels and the goal of the CNN model is to predict them with maximum accuracy.</p>
+<h3 id="convolution-network">Convolution network</h3>
+<p>The model was implemented using Keras and the model is a sequential model. The model consists of :-</p>
+<ul>
+<li>2 Convolutional Blocks - Contains a 2 <a href="https://keras.io/api/layers/convolution_layers/convolution2d/"target="_blank" rel="noopener noreferrer">Conv2D</a>
+ layers with <a href="https://keras.io/api/layers/activation_layers/leaky_relu/"target="_blank" rel="noopener noreferrer">LeakyReLu</a>
+ as activation layer, <a href="https://keras.io/api/layers/pooling_layers/max_pooling2d/"target="_blank" rel="noopener noreferrer">MaxPool2D</a>
+ layer and a <a href="https://keras.io/api/layers/core_layers/#dropout"target="_blank" rel="noopener noreferrer">Dropout layer</a>
+.</li>
+<li>Flatten Layer</li>
+<li>Dense Layer</li>
+<li>And finally the Output layer</li>
+</ul>
+<p>What are all these you ask? Well the job of the network is to understand the basic trait of each digit, a feature that will be common irrespective of the style of handwriting. Now all these mentioned layers are a part of this process and read more about each layer and its  functionalities <a href="https://www.upgrad.com/blog/basic-cnn-architecture/"target="_blank" rel="noopener noreferrer">here</a>
+.</p>
+<p><img  src="https://github.com/supertramp2/Images/blob/main/CNNArch.png?raw=true"
+        alt="Base Model"/></p>
+<p>After this the learning rate is set to 0.001, sparce_categorical_crossentropy is used as the loss function and the optimizer for the network is set as adam.</p>
+<p>Once this much is done training can be started. The below plot shows the increase in accuracy and decrease in loss value with training time.
+<img  src="https://github.com/supertramp2/Images/blob/main/PlotCNN.png?raw=true"
+        alt="Base Model"/></p>
+<p>After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.</p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/mnist/>MNIST</a><a class="category" href=/blog/categories/cnn/>CNN</a></section>
 </div>
-<div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/srgan/"><span class="iconfont icon-article"></span>Using GANs for Single Image Super Resolution</a></p><p><a class="link" href="/blog/posts/masking/"><span class="iconfont icon-article"></span>Masking stuffs in an image</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/srgan/"><span class="iconfont icon-article"></span>Using GANs for Single Image Super Resolution</a></p><p><a class="link" href="/blog/posts/masking/"><span class="iconfont icon-article"></span>Protecting privacy using PyTesseract</a></p></section></div></section><section id="footer"><div class="footer-wrap">
     <p class="copyright">Nived's Blog</p>
     <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
         target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
