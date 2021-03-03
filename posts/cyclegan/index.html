@@ -21,7 +21,11 @@
 <h2 id="cyclegan-model">CycleGAN Model</h2>
 <p>Generative Adversarial Networks were firstly introduced by Ian Goodfellow et.al[6], where they basically proposed an adversarial networks consisting of a Generator and a Discriminator. Generator as the name suggests, continuously generates output and the objective of the discriminator is to determine whether this output is real or fake. CycleGAN is basically following the idea but instead of using a single Generator and Discriminator, two of each is used. If we have two image domains X and Y (day and night), CycleGAN consists of a Generator G : X -&gt; Y, the second Generator F: Y -&gt; X and two Discriminator Dx and Dy. <br>
 Firstly an image of either of the domain(say X) is taken and is fed into G that generates an image of Domain Y, this image is fed into both Dy and F. Dy classifies it as real or fake, thus optimizing G (Adversarial Loss), whereas F takes in the output of G as the input, and generates an image of domain X known as the reconstructed image, which should be the same as the original input image (Cycle Loss). We also pass an image of domain Y to G to calculate the identity loss. Similar process is repeated by taking in an image from domain Y as the input.<br>
+<<<<<<< HEAD
 <img  src="https://github.com/supertramp2/Images/blob/main/base.png?raw=true"
+=======
+<img  src="https://github.com/supertramp2/blog/blob/main/posts/Images/base.png"
+>>>>>>> 07bd213a06a7a267abd8203cf31075bca4fa5823
         alt="Base Model"/></p>
 <p>The above diagram shows the architecture of the CycleGAN Model along with the three loss functions - Adversarial Loss, Content Loss and Identity Loss.</p>
 <h4 id="adversarial-loss">Adversarial loss</h4>
