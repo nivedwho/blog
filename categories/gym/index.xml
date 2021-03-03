@@ -113,10 +113,10 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
  also computes the content loss by comparing the generated high resolution image and the original high resolution image. Since the use of traditional methods such as Mean Square Error between the two images for calculating loss functions gave poor results, the authors used high level feature maps of the pretrained VGG 19 networks for extracting features and comparing the Generated and the Original Image. In the &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
 , SRGAN model was evaluated using various metrics including mean opinion scores and the model was able to achieve state of the art results. We additionally introduced a new loss function named Identity Loss functions that improved the performance of the generator for generating images with higher perceptual quality. For computing identity loss, during the training process we pass the HR image present in the dataset to the Generator and the output of this Generator is compared with the original image similar to how we computed the content loss. Ideally this generated image should be exactly the same as the input image.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/block.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/block.png&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/model.png&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/model.png&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;loss-functions&#34;&gt;Loss Functions&lt;/h2&gt;
 &lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
@@ -126,13 +126,13 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
 &lt;h4 id=&#34;identity-loss&#34;&gt;Identity loss&lt;/h4&gt;
 &lt;p&gt;I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/srgan_base.jpg&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/srgan_base.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/celebA.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/celebA.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/ourout.jpg&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/ourout.jpg&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Blog/content/Images/newplot.png&#34;
+&lt;img  src=&#34;https://github.com/supertramp2/blog/tree/main/Images/newplot.png&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;</description>
     </item>
     
