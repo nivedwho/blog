@@ -19,10 +19,10 @@
 The <a href="https://ieeexplore.ieee.org/document/8099502"target="_blank" rel="noopener noreferrer">base paper</a>
  also computes the content loss by comparing the generated high resolution image and the original high resolution image. Since the use of traditional methods such as Mean Square Error between the two images for calculating loss functions gave poor results, the authors used high level feature maps of the pretrained VGG 19 networks for extracting features and comparing the Generated and the Original Image. In the <a href="https://ieeexplore.ieee.org/document/8099502"target="_blank" rel="noopener noreferrer">base paper</a>
 , SRGAN model was evaluated using various metrics including mean opinion scores and the model was able to achieve state of the art results. We additionally introduced a new loss function named Identity Loss functions that improved the performance of the generator for generating images with higher perceptual quality. For computing identity loss, during the training process we pass the HR image present in the dataset to the Generator and the output of this Generator is compared with the original image similar to how we computed the content loss. Ideally this generated image should be exactly the same as the input image.<br>
-<img  src="https://github.com/supertramp2/blog/tree/main/Images/block.png?raw=true"
+<img  src="https://github.com/supertramp2/blog/blob/main/Images/block.png?raw=true"
         alt="Base Model"/></p>
 <h2 id="architecture">Architecture</h2>
-<p><img  src="https://github.com/supertramp2/blog/tree/main/Images/model.png?raw=true"
+<p><img  src="https://github.com/supertramp2/blog/blob/main/Images/model.png?raw=true"
         alt="Base Model"/></p>
 <h2 id="loss-functions">Loss Functions</h2>
 <h4 id="adversarial-loss">Adversarial loss</h4>
@@ -32,13 +32,12 @@ The <a href="https://ieeexplore.ieee.org/document/8099502"target="_blank" rel="n
 <h4 id="identity-loss">Identity loss</h4>
 <p>I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.</p>
 <h2 id="results">Results</h2>
-<p><img  src="https://github.com/supertramp2/blog/tree/main/Images/srgan_base.jpg?raw=true"
+<p>![Base Model]https://github.com/supertramp2/blog/blob/main/Images/srgan_base.jpg?raw=true)
+<img  src="https://github.com/supertramp2/blog/blob/main/Images/celebA.jpg?raw=true"
         alt="Base Model"/>
-<img  src="https://github.com/supertramp2/blog/tree/main/Images/celebA.jpg?raw=true"
+<img  src="https://github.com/supertramp2/blog/blob/main/Images/ourout.jpg?raw=true"
         alt="Base Model"/>
-<img  src="https://github.com/supertramp2/blog/tree/main/Images/ourout.jpg?raw=true"
-        alt="Base Model"/>
-<img  src="https://github.com/supertramp2/blog/tree/main/Images/newplot.png?raw=true"
+<img  src="https://github.com/supertramp2/blog/blob/main/Images/newplot.png?raw=true"
         alt="Base Model"/></p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/gan/>GAN</a></section>
 </div>
 <div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/cyclegan/"><span class="iconfont icon-article"></span>Using GANs to create 'art'</a></p><p><a class="link" href="/blog/posts/handwriting/"><span class="iconfont icon-article"></span>First neural netowork on MNSIT dataset.</a></p></section></div></section><section id="footer"><div class="footer-wrap">
