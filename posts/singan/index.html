@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>SinGANs - a GAN that trains on a single image&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.b11594c6612f22d06ea85519c5d587cd8cac49aa72c7d68a3f9cdfeaffc7e2cf79b571632d1bbb436a3e774e57de52c9.css" integrity="sha384-sRWUxmEvItBuqFUZxdWHzYysSapyx9aKP5zf6v/H4s95tXFjLRu7Q2o&#43;d05X3lLJ"><meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SinGANs - a GAN that trains on a single image" /><body><section id="header">
+<meta name="supported-color-schemes" content="light dark"><title>SinGAN - A GAN that only needs a single image&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.b11594c6612f22d06ea85519c5d587cd8cac49aa72c7d68a3f9cdfeaffc7e2cf79b571632d1bbb436a3e774e57de52c9.css" integrity="sha384-sRWUxmEvItBuqFUZxdWHzYysSapyx9aKP5zf6v/H4s95tXFjLRu7Q2o&#43;d05X3lLJ"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="SinGAN - A GAN that only needs a single image" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">My Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">SinGANs - a GAN that trains on a single image</h1><p class="article date"> </p></section><article class="article markdown-body"></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/gans/>GANs</a></section>
+    <h1 class="article title">SinGAN - A GAN that only needs a single image</h1><p class="article date"> </p></section><article class="article markdown-body"><p>A project reporducing the results of the paper <a href="https://arxiv.org/abs/1905.01164"target="_blank" rel="noopener noreferrer">&ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&rdquo;</a>
+ that won the ICCV 2019 best paper award</p>
+<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p>
+<p><img  src="https://github.com/supertramp2/Images/blob/main/SinGANintro.png?raw=true"
+        alt="SinGANintro"/></p>
+<p><a href="https://github.com/tamarott/SinGAN"target="_blank" rel="noopener noreferrer">Image Source</a>
+</p>
+<h3 id="introduction">Introduction</h3>
+<p>Unlike other deep learning models, SinGAN trains on a single image. The trained SinGAN model will be able to generate diffent fake samples of images that resembles the original input image but with noticable structural differences. This works well on abstract images and images of some landscape but does not work well with images of human faces for example. The SinGAN model can be used for various applications such as image super resolution, image editing and image harmonizations. Find similar examples in their <a href="https://tamarott.github.io/SinGAN.htm"target="_blank" rel="noopener noreferrer">project page.</a>
+</p>
+<h3 id="about-the-model">About the model</h3>
+<p>Unlike models such as <a href="https://arxiv.org/abs/1411.1784"target="_blank" rel="noopener noreferrer">cGANs</a>
+, the generators in SinGAN does not take in any conditional data while generating image or in other word, it it an unconditional generator. While training the input image is splitted into numerous patches and similar to <a href="https://arxiv.org/abs/1803.07422"target="_blank" rel="noopener noreferrer">PatchGAN</a>
+ these patches are used for training. These patches can be considered to be similar to the thousands of images taken for training by the other GAN or DL models.</p>
+<p>The generator produces realistic output samples with respect to the patch and the discriminator on the other hand tries to classify this patch as a real or generated one. The two networks compete against each other in a minimax game and with time a generator capable of generating fake images by fooling the discriminator is trained.</p>
+<h3 id="training">Training</h3>
+<p>Even though only a single image is used for training, SinGAN&rsquo;s training time is similar to any other deep learning model. The source code for the SinGAN model can be found in their ]<a href="https://github.com/mswang12/SinGAN.git"target="_blank" rel="noopener noreferrer">official repository</a>
+. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.</p>
+<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/gans/>GANs</a></section>
 </div>
 <div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/stylegan/"><span class="iconfont icon-article"></span>StyleGAN - A very popular GAN</a></p><p><a class="link" href="/blog/posts/cyclegan/"><span class="iconfont icon-article"></span>Using GANs to create 'art'</a></p></section></div></section><section id="footer"><div class="footer-wrap">
     <p class="copyright">Nived's Blog</p>

@@ -30,12 +30,34 @@
     </item>
     
     <item>
-      <title>SinGANs - a GAN that trains on a single image</title>
+      <title>SinGAN - A GAN that only needs a single image</title>
       <link>http://supertramp2.github.io/blog/posts/singan/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
-      <description></description>
+      <description>&lt;p&gt;A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
+ that won the ICCV 2019 best paper award&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/SinGANintro.png?raw=true&#34;
+        alt=&#34;SinGANintro&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tamarott/SinGAN&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Image Source&lt;/a&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Unlike other deep learning models, SinGAN trains on a single image. The trained SinGAN model will be able to generate diffent fake samples of images that resembles the original input image but with noticable structural differences. This works well on abstract images and images of some landscape but does not work well with images of human faces for example. The SinGAN model can be used for various applications such as image super resolution, image editing and image harmonizations. Find similar examples in their &lt;a href=&#34;https://tamarott.github.io/SinGAN.htm&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;project page.&lt;/a&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;about-the-model&#34;&gt;About the model&lt;/h3&gt;
+&lt;p&gt;Unlike models such as &lt;a href=&#34;https://arxiv.org/abs/1411.1784&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;cGANs&lt;/a&gt;
+, the generators in SinGAN does not take in any conditional data while generating image or in other word, it it an unconditional generator. While training the input image is splitted into numerous patches and similar to &lt;a href=&#34;https://arxiv.org/abs/1803.07422&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;PatchGAN&lt;/a&gt;
+ these patches are used for training. These patches can be considered to be similar to the thousands of images taken for training by the other GAN or DL models.&lt;/p&gt;
+&lt;p&gt;The generator produces realistic output samples with respect to the patch and the discriminator on the other hand tries to classify this patch as a real or generated one. The two networks compete against each other in a minimax game and with time a generator capable of generating fake images by fooling the discriminator is trained.&lt;/p&gt;
+&lt;h3 id=&#34;training&#34;&gt;Training&lt;/h3&gt;
+&lt;p&gt;Even though only a single image is used for training, SinGAN&amp;rsquo;s training time is similar to any other deep learning model. The source code for the SinGAN model can be found in their ]&lt;a href=&#34;https://github.com/mswang12/SinGAN.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;official repository&lt;/a&gt;
+. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -90,7 +112,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
         alt=&#34;DayNight&#34;/&gt;&lt;br&gt;
 &lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/nightday.jpg?raw=true&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;The model took me to the 4th place in the kaggle competition mentioned earlier, and the model with a single discriminator had almost the same score as the original one, even though there was improvement to the score.&lt;/p&gt;</description>
+&lt;p&gt;The model took me to the 4th place in the kaggle competition mentioned earlier, and the model with a single discriminator had almost the same score as the original one with considerably less training time.&lt;/p&gt;</description>
     </item>
     
     <item>
