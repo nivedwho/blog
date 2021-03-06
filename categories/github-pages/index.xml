@@ -37,7 +37,7 @@
       <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
       <description>&lt;p&gt;A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
  that won the ICCV 2019 best paper award&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/SinGANintro.png?raw=true&#34;
@@ -54,8 +54,8 @@
 &lt;p&gt;The generator produces realistic output samples with respect to the patch and the discriminator on the other hand tries to classify this patch as a real or generated one. The two networks compete against each other in a minimax game and with time a generator capable of generating fake images by fooling the discriminator is trained.&lt;/p&gt;
 &lt;h3 id=&#34;training&#34;&gt;Training&lt;/h3&gt;
 &lt;p&gt;Even though only a single image is used for training, SinGAN&amp;rsquo;s training time is similar to any other deep learning model. The source code for the SinGAN model can be found in their ]&lt;a href=&#34;https://github.com/mswang12/SinGAN.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;official repository&lt;/a&gt;
-. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.
+&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>

@@ -7,7 +7,7 @@
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">My Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
     <h1 class="article title">SinGAN - A GAN that only needs a single image</h1><p class="article date"> </p></section><article class="article markdown-body"><p>A project reporducing the results of the paper <a href="https://arxiv.org/abs/1905.01164"target="_blank" rel="noopener noreferrer">&ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&rdquo;</a>
  that won the ICCV 2019 best paper award</p>
-<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
         alt="Open in Colab"/></a>
 </p>
 <p><img  src="https://github.com/supertramp2/Images/blob/main/SinGANintro.png?raw=true"
@@ -24,8 +24,8 @@
 <p>The generator produces realistic output samples with respect to the patch and the discriminator on the other hand tries to classify this patch as a real or generated one. The two networks compete against each other in a minimax game and with time a generator capable of generating fake images by fooling the discriminator is trained.</p>
 <h3 id="training">Training</h3>
 <p>Even though only a single image is used for training, SinGAN&rsquo;s training time is similar to any other deep learning model. The source code for the SinGAN model can be found in their ]<a href="https://github.com/mswang12/SinGAN.git"target="_blank" rel="noopener noreferrer">official repository</a>
-. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.</p>
-<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+. I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.
+<a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
         alt="Open in Colab"/></a>
 </p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/gans/>GANs</a></section>
 </div>
