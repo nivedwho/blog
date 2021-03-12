@@ -212,6 +212,9 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
       
       <guid>http://supertramp2.github.io/blog/posts/handwriting/</guid>
       <description>&lt;p&gt;&lt;strong&gt;September 2020&lt;/strong&gt; || Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;about-the-project&#34;&gt;About the project&lt;/h3&gt;
 &lt;p&gt;The MNIST dataset is a popular containing a large number of images of handwritten digits. The figures shown below are plotted using matplotlib and it shows the number of images per digit in each training and validation set.
 &lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/digits.png?raw=true&#34;
@@ -239,7 +242,10 @@ The training set is labelled, which means that for each image the digit present 
 &lt;p&gt;Once this much is done training can be started. The below plot shows the increase in accuracy and decrease in loss value with training time.
 &lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/PlotCNN.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.&lt;/p&gt;</description>
+&lt;p&gt;After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
