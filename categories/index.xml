@@ -81,7 +81,7 @@ In spite of achieving superior results compared with the traditional other deep 
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;January 2020&lt;/strong&gt; || A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
+      <description>&lt;p&gt;&lt;strong&gt;January 2021&lt;/strong&gt; || A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
  that won the ICCV 2019 best paper award&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
