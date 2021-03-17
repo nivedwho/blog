@@ -10,6 +10,46 @@
     
     
     <item>
+      <title>Extracting emotions from texts.</title>
+      <link>http://supertramp2.github.io/blog/posts/emotions/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/emotions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;March 2021&lt;/strong&gt; || A project that implements a deep learning model for extracting emotions from the given text.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/ExtractEmotion.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;basic-steps-involved&#34;&gt;Basic Steps Involved&lt;/h3&gt;
+&lt;h4 id=&#34;dataset&#34;&gt;Dataset&lt;/h4&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/dair-ai/emotion_dataset&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Twitter Emotion Dataset&lt;/a&gt;
+ is used for training the model. The dataset consinsts of three folders - Train, Test and Labels for test (For evaluating and getting the accuracy). The train folder consists of a large number of tweets labelled with corresponding informations. The Hugging Face&amp;rsquo;s nlp package is downloaded firstly and then the &amp;lsquo;emotion&amp;rsquo; dataset is downloaded from it.&lt;/p&gt;
+&lt;h4 id=&#34;tokenize-the-data&#34;&gt;Tokenize the data&lt;/h4&gt;
+&lt;p&gt;The tweets cannot be passed directly to the model and it requires to be tokenized. Tokenizing involves mapping each unique word to a particular token/number. We also set the limit to 10000 words and other less frequently appering words are ignored.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tokenizer = Tokenizer(num_words=10000, oov_token=&#39;&amp;lt;UNK&amp;gt;&#39;)
+
+tokenizer.fit_on_texts(tweets)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After tokeninizing, the tweet &amp;lsquo;I didn&amp;rsquo;t feel humiliated&amp;rsquo; is changed to [2, 139, 3, 679] which the model understands.&lt;/p&gt;
+&lt;h4 id=&#34;padding-and-truncating-data&#34;&gt;Padding and truncating data&lt;/h4&gt;
+&lt;p&gt;The dataset consists of tweets of varying length which can be problematic. After visualizing the dataset it is found that the avg length of tweets are between 10-20 and very few exists with length more than 50. Therefore each tweet is changed to a seqence of length 50 and the ones greater than will be truncated and split.&lt;/p&gt;
+&lt;p&gt;The classes present in the dataset are &amp;lsquo;joy&amp;rsquo;, &amp;lsquo;sadness&amp;rsquo;, &amp;lsquo;surprise&amp;rsquo;, &amp;lsquo;fear&amp;rsquo;, &amp;lsquo;love&amp;rsquo; and &amp;lsquo;anger&amp;rsquo;. These classes also needs to be labelled from 0-6 before implementing the network.&lt;/p&gt;
+&lt;h4 id=&#34;creating-the-model&#34;&gt;Creating the model&lt;/h4&gt;
+&lt;p&gt;Now that the data is processed to a proper format, model can be created. It is implemented using the sequential class from keras consisting of following layers :&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEmodel.png?raw=true&#34;
+        alt=&#34;Model&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;Like other multi-class classification problems, here also categorical crossentropy is used as the loss functions.&lt;/p&gt;
+&lt;h4 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h4&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEResult.png?raw=true&#34;
+        alt=&#34;Result&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;The trained model obtained an accuaracy of 80% while working on validation set, which is just good enough.&lt;/p&gt;
+&lt;p&gt;Also the confusion matrix below justifies the efficiency of the model.
+&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEcm.png?raw=true&#34;
+        alt=&#34;Result&#34;/&gt;&lt;/p&gt;
+&lt;h4 id=&#34;working-on-user-input&#34;&gt;Working on User Input&lt;/h4&gt;
+&lt;p&gt;Although the model got good accuracy scores it doesn&amp;rsquo;t mean it will be as good for every user inputs, still it does work for most of the time. This lack of performance shows the need for a better model or a better dataset even.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Summiting mountains using RL</title>
       <link>http://supertramp2.github.io/blog/posts/climbingcars/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MNIST on Nived&#39;s Blog</title>
-    <link>http://supertramp2.github.io/blog/categories/mnist/</link>
-    <description>Recent content in MNIST on Nived&#39;s Blog</description>
+    <title>NLP on Nived&#39;s Blog</title>
+    <link>http://supertramp2.github.io/blog/categories/nlp/</link>
+    <description>Recent content in NLP on Nived&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://supertramp2.github.io/blog/categories/mnist/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://supertramp2.github.io/blog/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
