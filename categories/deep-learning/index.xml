@@ -5,10 +5,41 @@
     <description>Recent content in Deep Learning on Nived&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://supertramp2.github.io/blog/categories/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Attention based CNN for Image Classification</title>
+      <link>http://supertramp2.github.io/blog/posts/attncnn/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/attncnn/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;April 2021&lt;/strong&gt; || A project implementing a deep learning attention based classification model proposed in the paper &lt;a href=&#34;https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Learn To Pay Attention&amp;rdquo;&lt;/a&gt;
+ published in ICLR 2018 conference&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The basic idea behind attention models is to focus on that parts of a problem which are important. Such a model was introduced in 2014 and was mainly focused on solving NLP problem but eventually was found to be useful in the field of computer vision. Jetley et.al in the paper &amp;ldquo;Learn To Pay Attention&amp;rdquo; used attention based mechanism to solve simple image classification problem.&lt;/p&gt;
+&lt;h2 id=&#34;the-model&#34;&gt;The Model&lt;/h2&gt;
+&lt;p&gt;The most important concept discused in this paper would be &amp;lsquo;attention maps&amp;rsquo; which is a scalar matrix that represents activations of different locations of an image with respect to a target. With the help of attention maps the CNNs will eventually learn which part of an image is important for a particaular task. The image below is taken from the paper &lt;a href=&#34;https://arxiv.org/abs/1610.02391&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Grad-CAM: Gradient-weighted Class Activation Mapping&amp;rdquo;&lt;/a&gt;
+ and the attention map is trying to perform a similar task.&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/attnmaps.png?raw=true&#34;
+        alt=&#34;Attention Model&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;The authors of the paper takes a VGG network and adds attention layers between a number of layers(7,10 and 13). Attention is calculated by feeding the output of some layer &amp;lsquo;n&amp;rsquo; as input to the attention layer, which then calculates an &amp;ldquo;attention mask&amp;rdquo; (Binary matrix) and is multiplied with the input. This process is repeated for layers 10 and 13 also. The output of of these attention layers is represented by &amp;ldquo;g_a1&amp;rdquo;, &amp;ldquo;g_a2&amp;rdquo; and &amp;ldquo;g_a3&amp;rdquo; are then fed into the fully connected layers for classification.&lt;/p&gt;
+&lt;h2 id=&#34;working-of-the-attention-part&#34;&gt;Working of the &amp;lsquo;attention&amp;rsquo; part&lt;/h2&gt;
+&lt;p&gt;Firstly a &amp;lsquo;compatibility score&amp;rsquo; is calculated by comparing local features with the global ones. The term &amp;lsquo;global feature&amp;rsquo; represents output of some convolution layer through which the input image is passed and its effective reseptive field will cover the whole image, whereas &amp;lsquo;local feature&amp;rsquo; represents the features extracted from some subset of the original image. Similar to what we see in the figure 1, the score will be high when a local patch is placed over the dog&amp;rsquo;s face since it is one of the most dominant feature in the image that helps in classifying it correctly.
+It can be calculated using two ways - by taking a dot product or by a method called &amp;lsquo;parametrised compatibility.&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;Secondly the attention weights are calculated by transforming the compatibiltiy score to range of (0,1). This is done by using softmax function.&lt;/p&gt;
+&lt;p&gt;Thirdly using this attention weight, a weighted combination of the outputs of that particular layer is taken.&lt;/p&gt;
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;The authors of the paper have provided the source code for the proposed model but I have modified it a little bit and can now be run on Google Colaboratory. The batch size and number of epochs had to be reduced but still the accuracy of the model was seen to be increasing with time.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sentiment Analysis on Texts</title>
@@ -310,22 +341,6 @@ The training set is labelled, which means that for each image the digit present 
       <guid>http://supertramp2.github.io/blog/posts/colophon/</guid>
       <description>&lt;p&gt;About the making of this &lt;a href=&#34;https://supertramp2.github.io/blog/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;blog website&lt;/a&gt;
  and my &lt;a href=&#34;https://supertramp2.github.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;main portfolio page&lt;/a&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Document Scanner that works.</title>
-      <link>http://supertramp2.github.io/blog/posts/docscan/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://supertramp2.github.io/blog/posts/docscan/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;June 2020&lt;/strong&gt; || A Document scanner made using Python and  OpenCV.&lt;/p&gt;
-&lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
-&lt;p&gt;This was one of my first ever projects in the field of computer vision. The scanner scans documents using the mobile camera, and the frames were sent to my computer using the &amp;lsquo;IP Camera&amp;rsquo; application. The frames recieved are then captured using OpenCV. Automatic contour detection was not at all effective and did not work for most of the time, so the edge points of the pages are marked by the user and then the image is cropped and warped (Perspective transform by OpenCV). After this the image is binarized and passed through some filters, to enhance the texts present in the document. Using the PIL library, multiple images of pages are finally saved as a single pdf file.&lt;/p&gt;
-&lt;p&gt;In conclusion its a scanner that never fails and doesn&amp;rsquo;t eat up space like the other applications.
-Later I also published a &lt;a href=&#34;https://py.plainenglish.io/document-scanner-python-64b73b0fed31&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Medium blog&lt;/a&gt;
- on this project and it got some decent amount of views :)&lt;/p&gt;
-&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/supertramp2/Document-Scanner-Python&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     

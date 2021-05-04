@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.83.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Attention based CNN for Image Classification&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.86e97c9ce79d7ff23aa47166ea466e3ce244928ab4d29a809f1f7b896f214f65fc48475a98961c0ee567475b44b7275c.css" integrity="sha384-hul8nOedf/I6pHFm6kZuPOJEkoq00pqAnx97iW8hT2X8SEdamJYcDuVnR1tEtydc"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Attention based CNN for Image Classification" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Attention based CNN for Image Classification</h1><p class="article date"> </p></section><article class="article markdown-body"><p><strong>April 2021</strong> || A project implementing a deep learning attention based classification model proposed in the paper <a href="https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf"target="_blank" rel="noopener noreferrer">&ldquo;Learn To Pay Attention&rdquo;</a>
+ published in ICLR 2018 conference</p>
+<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p>
+<h2 id="introduction">Introduction</h2>
+<p>The basic idea behind attention models is to focus on that parts of a problem which are important. Such a model was introduced in 2014 and was mainly focused on solving NLP problem but eventually was found to be useful in the field of computer vision. Jetley et.al in the paper &ldquo;Learn To Pay Attention&rdquo; used attention based mechanism to solve simple image classification problem.</p>
+<h2 id="the-model">The Model</h2>
+<p>The most important concept discused in this paper would be &lsquo;attention maps&rsquo; which is a scalar matrix that represents activations of different locations of an image with respect to a target. With the help of attention maps the CNNs will eventually learn which part of an image is important for a particaular task. The image below is taken from the paper <a href="https://arxiv.org/abs/1610.02391"target="_blank" rel="noopener noreferrer">&ldquo;Grad-CAM: Gradient-weighted Class Activation Mapping&rdquo;</a>
+ and the attention map is trying to perform a similar task.</p>
+<p><img  src="https://github.com/supertramp2/Images/blob/main/attnmaps.png?raw=true"
+        alt="Attention Model"/></p>
+<p>The authors of the paper takes a VGG network and adds attention layers between a number of layers(7,10 and 13). Attention is calculated by feeding the output of some layer &lsquo;n&rsquo; as input to the attention layer, which then calculates an &ldquo;attention mask&rdquo; (Binary matrix) and is multiplied with the input. This process is repeated for layers 10 and 13 also. The output of of these attention layers is represented by &ldquo;g_a1&rdquo;, &ldquo;g_a2&rdquo; and &ldquo;g_a3&rdquo; are then fed into the fully connected layers for classification.</p>
+<h2 id="working-of-the-attention-part">Working of the &lsquo;attention&rsquo; part</h2>
+<p>Firstly a &lsquo;compatibility score&rsquo; is calculated by comparing local features with the global ones. The term &lsquo;global feature&rsquo; represents output of some convolution layer through which the input image is passed and its effective reseptive field will cover the whole image, whereas &lsquo;local feature&rsquo; represents the features extracted from some subset of the original image. Similar to what we see in the figure 1, the score will be high when a local patch is placed over the dog&rsquo;s face since it is one of the most dominant feature in the image that helps in classifying it correctly.
+It can be calculated using two ways - by taking a dot product or by a method called &lsquo;parametrised compatibility.&rsquo;</p>
+<p>Secondly the attention weights are calculated by transforming the compatibiltiy score to range of (0,1). This is done by using softmax function.</p>
+<p>Thirdly using this attention weight, a weighted combination of the outputs of that particular layer is taken.</p>
+<h2 id="implementation">Implementation</h2>
+<p>The authors of the paper have provided the source code for the proposed model but I have modified it a little bit and can now be run on Google Colaboratory. The batch size and number of epochs had to be reduced but still the accuracy of the model was seen to be increasing with time.</p>
+<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/attention/>Attention</a></section>
+</div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/emotions/"><span class="iconfont icon-article"></span>Sentiment Analysis on Texts</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">Nived's Blog</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank" rel="noopener noreferrer">Notepadium</a></p></div>
+</section></body>
+
+</html>
