@@ -18,7 +18,7 @@
       <guid>http://supertramp2.github.io/blog/posts/attncnn/</guid>
       <description>&lt;p&gt;&lt;strong&gt;April 2021&lt;/strong&gt; || A project implementing a deep learning attention based classification model proposed in the paper &lt;a href=&#34;https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Learn To Pay Attention&amp;rdquo;&lt;/a&gt;
  published in ICLR 2018 conference&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -26,7 +26,7 @@
 &lt;h2 id=&#34;the-model&#34;&gt;The Model&lt;/h2&gt;
 &lt;p&gt;The most important concept discused in this paper would be &amp;lsquo;attention maps&amp;rsquo; which is a scalar matrix that represents activations of different locations of an image with respect to a target. With the help of attention maps the CNNs will eventually learn which part of an image is important for a particaular task. The image below is taken from the paper &lt;a href=&#34;https://arxiv.org/abs/1610.02391&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Grad-CAM: Gradient-weighted Class Activation Mapping&amp;rdquo;&lt;/a&gt;
  and the attention map is trying to perform a similar task.&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/attnmaps.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/attnmaps.png?raw=true&#34;
         alt=&#34;Attention Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The authors of the paper takes a VGG network and adds attention layers between a number of layers(7,10 and 13). Attention is calculated by feeding the output of some layer &amp;lsquo;n&amp;rsquo; as input to the attention layer, which then calculates an &amp;ldquo;attention mask&amp;rdquo; (Binary matrix) and is multiplied with the input. This process is repeated for layers 10 and 13 also. The output of of these attention layers is represented by &amp;ldquo;g_a1&amp;rdquo;, &amp;ldquo;g_a2&amp;rdquo; and &amp;ldquo;g_a3&amp;rdquo; are then fed into the fully connected layers for classification.&lt;/p&gt;
 &lt;h2 id=&#34;working-of-the-attention-part&#34;&gt;Working of the &amp;lsquo;attention&amp;rsquo; part&lt;/h2&gt;
@@ -36,7 +36,7 @@ It can be calculated using two ways - by taking a dot product or by a method cal
 &lt;p&gt;Thirdly using this attention weight, a weighted combination of the outputs of that particular layer is taken.&lt;/p&gt;
 &lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
 &lt;p&gt;The authors of the paper have provided the source code for the proposed model but I have modified it a little bit and can now be run on Google Colaboratory. The batch size and number of epochs had to be reduced but still the accuracy of the model was seen to be increasing with time.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
@@ -48,7 +48,7 @@ It can be calculated using two ways - by taking a dot product or by a method cal
       
       <guid>http://supertramp2.github.io/blog/posts/emotions/</guid>
       <description>&lt;p&gt;&lt;strong&gt;March 2021&lt;/strong&gt; || A project that implements a deep learning model for extracting emotions from the given text.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/ExtractEmotion.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/ExtractEmotion.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h3 id=&#34;basic-steps-involved&#34;&gt;Basic Steps Involved&lt;/h3&gt;
@@ -67,15 +67,15 @@ tokenizer.fit_on_texts(tweets)
 &lt;p&gt;The classes present in the dataset are &amp;lsquo;joy&amp;rsquo;, &amp;lsquo;sadness&amp;rsquo;, &amp;lsquo;surprise&amp;rsquo;, &amp;lsquo;fear&amp;rsquo;, &amp;lsquo;love&amp;rsquo; and &amp;lsquo;anger&amp;rsquo;. These classes also needs to be labelled from 0-6 before implementing the network.&lt;/p&gt;
 &lt;h4 id=&#34;creating-the-model&#34;&gt;Creating the model&lt;/h4&gt;
 &lt;p&gt;Now that the data is processed to a proper format, model can be created. It is implemented using the sequential class from keras consisting of following layers :&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEmodel.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/TEmodel.png?raw=true&#34;
         alt=&#34;Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;Like other multi-class classification problems, here also categorical crossentropy is used as the loss functions.&lt;/p&gt;
 &lt;h4 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h4&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEResult.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/TEResult.png?raw=true&#34;
         alt=&#34;Result&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The trained model obtained an accuaracy of 80% while working on validation set, which is just good enough.&lt;/p&gt;
 &lt;p&gt;Also the confusion matrix below justifies the efficiency of the model.
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/TEcm.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/TEcm.png?raw=true&#34;
         alt=&#34;Result&#34;/&gt;&lt;/p&gt;
 &lt;h4 id=&#34;working-on-user-input&#34;&gt;Working on User Input&lt;/h4&gt;
 &lt;p&gt;Although the model got good accuracy scores it doesn&amp;rsquo;t mean it will be as good for every user inputs, still it does work for most of the time. This lack of performance shows the need for a better model or a better dataset even.&lt;/p&gt;</description>
@@ -89,7 +89,7 @@ tokenizer.fit_on_texts(tweets)
       <guid>http://supertramp2.github.io/blog/posts/climbingcars/</guid>
       <description>&lt;p&gt;&lt;strong&gt;March 2021&lt;/strong&gt; || Tensorflow solution for the &lt;a href=&#34;https://gym.openai.com/envs/MountainCarContinuous-v0/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;MountainCarContinuous-v0&lt;/a&gt;
  problem&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/mountain_car.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/mountain_car.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
@@ -102,12 +102,12 @@ tokenizer.fit_on_texts(tweets)
 &lt;p&gt;The first thing I did is explore the problem and see how the car is moving. For that all I had to do was to load the mountain car enviornment and call the &amp;ldquo;env.action_space.sample()&amp;rdquo; for getting the actions. This moves the car back and forth with the values specified in its &lt;a href=&#34;https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;source code&lt;/a&gt;
 .&lt;/p&gt;
 &lt;p&gt;After 200 iterations code stopped and the car obviously was unable to climb the mountain. More importantly this lets us see the data generated by the car - position, velocity and its relation with the reward.&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/dumbcar.gif?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/dumbcar.gif?raw=true&#34;
         alt=&#34;Modified Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;Before implementing a neural network we need sufficient data from which the car can learn to move correctly. To do this I have implemented the function &amp;ldquo;model_data_preperation&amp;rdquo; that randomly moves the car using the 3 actions- 0(move left), 1(rest) and 2(move right). Instead of setting the reward -1 for all actions, it is set as 1 if the car&amp;rsquo;s position is getting closer to the top of the mountain. Once the score is greater than -198 the data is added to the list of accepted score. Now we have generated the data that tells us what movements are beneficial for us and what all are not. The game is similarly played for 10000 times.&lt;/p&gt;
 &lt;p&gt;Nextly I have made a sequencial model that learns from the generated data and it is trained.&lt;/p&gt;
-&lt;p&gt;Again the car is made to move again, only this time the actions are set by the trained model and the reward is set like it was at first, ie. always = -1 unless the goal position is reached.&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/smartcar.gif?raw=true&#34;
+&lt;p&gt;Again the car is made to move, only this time the actions are set by the trained model and the reward is set like it was at first, ie. always = -1 unless the goal position is reached.&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/smartcar.gif?raw=true&#34;
         alt=&#34;Modified Model&#34;/&gt;&lt;/p&gt;</description>
     </item>
     
@@ -119,7 +119,7 @@ tokenizer.fit_on_texts(tweets)
       <guid>http://supertramp2.github.io/blog/posts/stylegan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;February 2021&lt;/strong&gt; || A project reproducing the paper &lt;a href=&#34;https://openaccess.thecvf.com/content_CVPR_2019/papers/Karras_A_Style-Based_Generator_Architecture_for_Generative_Adversarial_Networks_CVPR_2019_paper.pdf&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;A Style-Based Generator Architecture for Generative Adversarial Networks&amp;rdquo;&lt;/a&gt;
  presented at CVPR 2019&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/StyleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/StyleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -127,21 +127,21 @@ tokenizer.fit_on_texts(tweets)
 In spite of achieving superior results compared with the traditional other deep learning models, the generator network in GANs continues to remain as a black box. It takes an input from latent space and generates an image and sometimes the generated samples can be completely random. This lack of control over the generator can hinder the performance of GANs and the StyleGAN model proposed by Karras et al. addresses this issue and provides a solution.&lt;/p&gt;
 &lt;h2 id=&#34;stylegan-model&#34;&gt;StyleGAN Model&lt;/h2&gt;
 &lt;p&gt;The StyleGAN is a type of adversarial network that gives us control over the generator which means that it can allow us to adjust certain features in an image by tuning the hyperparameters. StyleGAN architecture modifies the generator network such that it no longer takes points from latent space rather it uses two new sources - a standalone mapping network and a noise layer. The mapping network as seen in the figure, maps the latent vector to an intermediate latent space after passing through several fully connected layers. This new latent space is then used to control the features of the image generated by the generator by making use of AdaIn layers.&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/StyleGAN.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/StyleGAN.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;Adaptive instance normalization is one of the key components used in the StyleGAN model. Another reason for the superiority of StyleGAN, is the usage of a progressive growing method which was introduced by Karras et.al in the paper on ProGAN. This means that the model initially generates a low resolution sample and then progressively increases the resolution to the required value. This ensures that the generator first learns high level features and overcomes simple problems before moving onto focusing on finer details resulting in a more stabilized model. StyleGAN also adds noise after each convolution layer increasing the ‘stochastic variation’ in the generated sample which allows us to change fine details present in the image while tuning the hyperparameters.&lt;/p&gt;
 &lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
 &lt;p&gt;A new clean version[6] of the StyleGAN model was implemented. The model was trained on the popular MNIST dataset. The generator starts by generating 4x4 images and then progressively increases resolution to 28x28. Even though the MNIST dataset doesn’t do justice in showing the stunning performance of StyleGAN, the reason for taking it is that it&amp;rsquo;s computationally less demanding. StyleGAN was trained on high resolution human face images[8] by the original authors[7], but it was difficult to do so in the Colab notebook. Satisfactory results were not obtained even after several hours. On the other hand MNIST dataset contains 28x28 images which makes the generator’s job easier and the training process faster. The architecture of generator and discriminator is used exactly the same as the original implementation[6] and the training parameters are adjusted for the best performance. My implementation can be found here.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/StyleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/StyleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
 &lt;p&gt;After training :
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/sgmain_result.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/sgmain_result.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/SG_result1.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/SG_result1.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/SG_result2.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/SG_result2.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The second figure shows the generated samples with a truncation value of 0.9 and the third figure shows the samples that are generated with a truncation value of 0.5. The truncation value is a factor that decides the similarity between the generated and original samples, in other words lower the truncation value more similar will be the input and output. This is the magic of StyleGANs! While working on human face datasets the truncation value lets us change different attributes of the image like skin color, hair color&lt;/p&gt;</description>
     </item>
@@ -154,10 +154,10 @@ In spite of achieving superior results compared with the traditional other deep 
       <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;January 2021&lt;/strong&gt; || A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
  that won the ICCV 2019 best paper award&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/SinGANintro.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/SinGANintro.png?raw=true&#34;
         alt=&#34;SinGANintro&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/tamarott/SinGAN&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Image Source&lt;/a&gt;
 &lt;/p&gt;
@@ -172,7 +172,7 @@ In spite of achieving superior results compared with the traditional other deep 
 &lt;h3 id=&#34;training&#34;&gt;Training&lt;/h3&gt;
 &lt;p&gt;Even though only a single image is used for training, SinGAN&amp;rsquo;s training time is similar to any other deep learning model. The source code for the SinGAN model can be found in their ]&lt;a href=&#34;https://github.com/mswang12/SinGAN.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;official repository&lt;/a&gt;
 . I have implemented a Jupyter notebook version of this code which can be trained on Colab. Also the pretrained weights of the model can be found in the official repo.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;The training process had no issues in Colab although the results I got were not as good when compared with the pre-trained network. Tried the Colosseum image as well as another HR image for testing out the model&amp;rsquo;s ISR capabilites.&lt;/p&gt;</description>
@@ -186,8 +186,7 @@ In spite of achieving superior results compared with the traditional other deep 
       <guid>http://supertramp2.github.io/blog/posts/cyclegan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;December 2020&lt;/strong&gt; || A project reproducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1703.10593&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks&amp;rdquo;&lt;/a&gt;
  and making some additional changes to improve its performance.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/CycleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/CycleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -200,7 +199,7 @@ In spite of achieving superior results compared with the traditional other deep 
 &lt;h2 id=&#34;cyclegan-model&#34;&gt;CycleGAN Model&lt;/h2&gt;
 &lt;p&gt;Generative Adversarial Networks were firstly introduced by Ian Goodfellow et.al[6], where they basically proposed an adversarial networks consisting of a Generator and a Discriminator. Generator as the name suggests, continuously generates output and the objective of the discriminator is to determine whether this output is real or fake. CycleGAN is basically following the idea but instead of using a single Generator and Discriminator, two of each is used. If we have two image domains X and Y (day and night), CycleGAN consists of a Generator G : X -&amp;gt; Y, the second Generator F: Y -&amp;gt; X and two Discriminator Dx and Dy. &lt;br&gt;
 Firstly an image of either of the domain(say X) is taken and is fed into G that generates an image of Domain Y, this image is fed into both Dy and F. Dy classifies it as real or fake, thus optimizing G (Adversarial Loss), whereas F takes in the output of G as the input, and generates an image of domain X known as the reconstructed image, which should be the same as the original input image (Cycle Loss). We also pass an image of domain Y to G to calculate the identity loss. Similar process is repeated by taking in an image from domain Y as the input.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/base.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/base.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The above diagram shows the architecture of the CycleGAN Model along with the three loss functions - Adversarial Loss, Content Loss and Identity Loss.&lt;/p&gt;
 &lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
@@ -212,7 +211,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 &lt;h2 id=&#34;my-contributions&#34;&gt;My Contributions&lt;/h2&gt;
 &lt;h4 id=&#34;new-architecture&#34;&gt;New Architecture&lt;/h4&gt;
 &lt;p&gt;One big disadvantage of CycleGAN is training them is really difficult and the training time is too long, thanks to its multiple generators and discriminators.So I eliminated the use of Discriminator Dy. This did not affect the output quality by much rather decreased the training time. The modified architecture is shown in the below diagram.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/new.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/new.png?raw=true&#34;
         alt=&#34;Modified Model&#34;/&gt;&lt;/p&gt;
 &lt;h4 id=&#34;improved-identity-loss&#34;&gt;Improved Identity Loss&lt;/h4&gt;
 &lt;p&gt;Layer of pretrained VGG-19 Network was used for feature extraction and the loss was calculated on the basis of these features. This improved the quality of generated outputs.&lt;/p&gt;
@@ -220,15 +219,15 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 &lt;p&gt;Both the original and modified model was trained on Monet-Photos Dataset and a Day-Night image dataset, which I had created by combining different images from publicly available sources. Both the original and modified models were trained on these datasets and I was able to Translate photos to paintings, Night time images to Day time images. Additionally I also wanted to compare the two models using metrics such as MSE, PSNR and SSIM and therefore created a dataset with some random colored photos, then took another set of photos and converted them to grayscale.&lt;/p&gt;
 &lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
 &lt;p&gt;Both the models were then trained to translate a colored image to grayscale, and the generated image was compared with the grayscale version of the input image. I found that usage of VGG network gave better results compared to the original one, but there was some reduction in quality when I modified the architecture. Still any reduction in training time is always a good thing especially in the case deep networks such as CycleGANs.
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/eval.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/eval.png?raw=true&#34;
         alt=&#34;Evaluation Table&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
 &lt;p&gt;The below images shows a few of the results I obtained.
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/photo.jpg?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/photo.jpg?raw=true&#34;
         alt=&#34;Monet&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/daynight.jpg?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/daynight.jpg?raw=true&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/nightday.jpg?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/nightday.jpg?raw=true&#34;
         alt=&#34;DayNight&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;The model took me to the 4th place in the kaggle competition mentioned earlier, and the model with a single discriminator had almost the same score as the original one with considerably less training time.&lt;/p&gt;</description>
     </item>
@@ -241,7 +240,7 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
       <guid>http://supertramp2.github.io/blog/posts/srgan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;December 2020&lt;/strong&gt; || A project reproducing the results of the paper &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network&amp;rdquo;&lt;/a&gt;
  and making some additional changes to improve its performance.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -253,10 +252,10 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
 The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
  also computes the content loss by comparing the generated high resolution image and the original high resolution image. Since the use of traditional methods such as Mean Square Error between the two images for calculating loss functions gave poor results, the authors used high level feature maps of the pretrained VGG 19 networks for extracting features and comparing the Generated and the Original Image. In the &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;base paper&lt;/a&gt;
 , SRGAN model was evaluated using various metrics including mean opinion scores and the model was able to achieve state of the art results. We additionally introduced a new loss function named Identity Loss functions that improved the performance of the generator for generating images with higher perceptual quality. For computing identity loss, during the training process we pass the HR image present in the dataset to the Generator and the output of this Generator is compared with the original image similar to how we computed the content loss. Ideally this generated image should be exactly the same as the input image.&lt;br&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/block.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/block.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/model.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/model.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;loss-functions&#34;&gt;Loss Functions&lt;/h2&gt;
 &lt;h4 id=&#34;adversarial-loss&#34;&gt;Adversarial loss&lt;/h4&gt;
@@ -266,13 +265,13 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
 &lt;h4 id=&#34;identity-loss&#34;&gt;Identity loss&lt;/h4&gt;
 &lt;p&gt;I have introduced a new loss function that encourages the generator to output the same image when a HR image is inputted to it. This potentially helps the generator in recognizing the features and traits present in a high resolution image.&lt;/p&gt;
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/blog/blob/main/Images/srgan_base.jpg?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/blog/blob/main/Images/srgan_base.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/celebA.jpg?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/celebA.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/ourout.jpg?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/ourout.jpg?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/newplot.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/newplot.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;</description>
     </item>
     
@@ -283,14 +282,14 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
       
       <guid>http://supertramp2.github.io/blog/posts/handwriting/</guid>
       <description>&lt;p&gt;&lt;strong&gt;September 2020&lt;/strong&gt; || Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;h3 id=&#34;about-the-project&#34;&gt;About the project&lt;/h3&gt;
 &lt;p&gt;The MNIST dataset is a popular containing a large number of images of handwritten digits. The figures shown below are plotted using matplotlib and it shows the number of images per digit in each training and validation set.
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/digits.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/digits.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/digitsval.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/digitsval.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;
 The training set is labelled, which means that for each image the digit present in the image will be provided as a label. The validation set will not contain these labels and the goal of the CNN model is to predict them with maximum accuracy.&lt;/p&gt;
 &lt;h3 id=&#34;convolution-network&#34;&gt;Convolution network&lt;/h3&gt;
@@ -307,14 +306,14 @@ The training set is labelled, which means that for each image the digit present 
 &lt;/ul&gt;
 &lt;p&gt;What are all these you ask? Well the job of the network is to understand the basic trait of each digit, a feature that will be common irrespective of the style of handwriting. Now all these mentioned layers are a part of this process and read more about each layer and its  functionalities &lt;a href=&#34;https://www.upgrad.com/blog/basic-cnn-architecture/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
 .&lt;/p&gt;
-&lt;p&gt;&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/CNNArch.png?raw=true&#34;
+&lt;p&gt;&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/CNNArch.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;After this the learning rate is set to 0.001, sparce_categorical_crossentropy is used as the loss function and the optimizer for the network is set as adam.&lt;/p&gt;
 &lt;p&gt;Once this much is done training can be started. The below plot shows the increase in accuracy and decrease in loss value with training time.
-&lt;img  src=&#34;https://github.com/supertramp2/Images/blob/main/PlotCNN.png?raw=true&#34;
+&lt;img  src=&#34;https://github.com/nivedwho/Images/blob/main/PlotCNN.png?raw=true&#34;
         alt=&#34;Base Model&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
@@ -329,7 +328,7 @@ The training set is labelled, which means that for each image the digit present 
 &lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
 &lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained.&lt;/p&gt;
 &lt;p&gt;The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;
-&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/supertramp2/AadharMasking&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
+&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/nivedwho/AadharMasking&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     

@@ -6,14 +6,14 @@
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
     <h1 class="article title">Working with CNN on MNIST dataset.</h1><p class="article date"> </p></section><article class="article markdown-body"><p><strong>September 2020</strong> || Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.</p>
-<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+<p><a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
         alt="Open in Colab"/></a>
 </p>
 <h3 id="about-the-project">About the project</h3>
 <p>The MNIST dataset is a popular containing a large number of images of handwritten digits. The figures shown below are plotted using matplotlib and it shows the number of images per digit in each training and validation set.
-<img  src="https://github.com/supertramp2/Images/blob/main/digits.png?raw=true"
+<img  src="https://github.com/nivedwho/Images/blob/main/digits.png?raw=true"
         alt="Base Model"/>
-<img  src="https://github.com/supertramp2/Images/blob/main/digitsval.png?raw=true"
+<img  src="https://github.com/nivedwho/Images/blob/main/digitsval.png?raw=true"
         alt="Base Model"/>
 The training set is labelled, which means that for each image the digit present in the image will be provided as a label. The validation set will not contain these labels and the goal of the CNN model is to predict them with maximum accuracy.</p>
 <h3 id="convolution-network">Convolution network</h3>
@@ -30,14 +30,14 @@ The training set is labelled, which means that for each image the digit present 
 </ul>
 <p>What are all these you ask? Well the job of the network is to understand the basic trait of each digit, a feature that will be common irrespective of the style of handwriting. Now all these mentioned layers are a part of this process and read more about each layer and its  functionalities <a href="https://www.upgrad.com/blog/basic-cnn-architecture/"target="_blank" rel="noopener noreferrer">here</a>
 .</p>
-<p><img  src="https://github.com/supertramp2/Images/blob/main/CNNArch.png?raw=true"
+<p><img  src="https://github.com/nivedwho/Images/blob/main/CNNArch.png?raw=true"
         alt="Base Model"/></p>
 <p>After this the learning rate is set to 0.001, sparce_categorical_crossentropy is used as the loss function and the optimizer for the network is set as adam.</p>
 <p>Once this much is done training can be started. The below plot shows the increase in accuracy and decrease in loss value with training time.
-<img  src="https://github.com/supertramp2/Images/blob/main/PlotCNN.png?raw=true"
+<img  src="https://github.com/nivedwho/Images/blob/main/PlotCNN.png?raw=true"
         alt="Base Model"/></p>
 <p>After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.</p>
-<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/DigitRec.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+<p><a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
         alt="Open in Colab"/></a>
 </p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/mnist/>MNIST</a><a class="category" href=/blog/categories/cnn/>CNN</a></section>
 </div>

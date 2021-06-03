@@ -6,7 +6,7 @@
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
     <h1 class="article title">Sentiment Analysis on Texts</h1><p class="article date"> </p></section><article class="article markdown-body"><p><strong>March 2021</strong> || A project that implements a deep learning model for extracting emotions from the given text.</p>
-<p><a href="https://colab.research.google.com/github/supertramp2/Colab/blob/main/ExtractEmotion.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+<p><a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/ExtractEmotion.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
         alt="Open in Colab"/></a>
 </p>
 <h3 id="basic-steps-involved">Basic Steps Involved</h3>
@@ -25,15 +25,15 @@ tokenizer.fit_on_texts(tweets)
 <p>The classes present in the dataset are &lsquo;joy&rsquo;, &lsquo;sadness&rsquo;, &lsquo;surprise&rsquo;, &lsquo;fear&rsquo;, &lsquo;love&rsquo; and &lsquo;anger&rsquo;. These classes also needs to be labelled from 0-6 before implementing the network.</p>
 <h4 id="creating-the-model">Creating the model</h4>
 <p>Now that the data is processed to a proper format, model can be created. It is implemented using the sequential class from keras consisting of following layers :</p>
-<p><img  src="https://github.com/supertramp2/Images/blob/main/TEmodel.png?raw=true"
+<p><img  src="https://github.com/nivedwho/Images/blob/main/TEmodel.png?raw=true"
         alt="Model"/></p>
 <p>Like other multi-class classification problems, here also categorical crossentropy is used as the loss functions.</p>
 <h4 id="evaluation">Evaluation</h4>
-<p><img  src="https://github.com/supertramp2/Images/blob/main/TEResult.png?raw=true"
+<p><img  src="https://github.com/nivedwho/Images/blob/main/TEResult.png?raw=true"
         alt="Result"/></p>
 <p>The trained model obtained an accuaracy of 80% while working on validation set, which is just good enough.</p>
 <p>Also the confusion matrix below justifies the efficiency of the model.
-<img  src="https://github.com/supertramp2/Images/blob/main/TEcm.png?raw=true"
+<img  src="https://github.com/nivedwho/Images/blob/main/TEcm.png?raw=true"
         alt="Result"/></p>
 <h4 id="working-on-user-input">Working on User Input</h4>
 <p>Although the model got good accuracy scores it doesn&rsquo;t mean it will be as good for every user inputs, still it does work for most of the time. This lack of performance shows the need for a better model or a better dataset even.</p></article><section class="article labels"><a class="category" href=/blog/categories/nlp/>NLP</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/sentiment-analysis/>Sentiment Analysis</a></section>
