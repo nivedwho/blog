@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.83.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Siamese Network for Image Classification&nbsp;&ndash;&nbsp;Nived&#39;s Blog</title><link rel="stylesheet" href="/blog/css/core.min.86e97c9ce79d7ff23aa47166ea466e3ce244928ab4d29a809f1f7b896f214f65fc48475a98961c0ee567475b44b7275c.css" integrity="sha384-hul8nOedf/I6pHFm6kZuPOJEkoq00pqAnx97iW8hT2X8SEdamJYcDuVnR1tEtydc"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Siamese Network for Image Classification" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/blog/"><span class="site name">Nived's Blog</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="https://supertramp2%2egithub%2eio/"target="_blank" rel="noopener noreferrer">Website</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Siamese Network for Image Classification</h1><p class="article date"> </p></section><article class="article markdown-body"><p><strong>May 2021</strong> || A project implementing a Siamese Network for image classification.</p>
+<p><a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p>
+<h2 id="the-problem">The Problem</h2>
+<p>The <a href="https://www.tensorflow.org/datasets/catalog/malaria"target="_blank" rel="noopener noreferrer">dataset</a>
+ I used consisted of malaria infected and uninfected cell images. The task is to perform binary classification and there are numerous implementation and research papers that worked on this problem. Using a pre-trained VGG network <a href="https://peerj.com/articles/4568/"target="_blank" rel="noopener noreferrer">this</a>
+ paper, was able to obtain an accuracy of 99.4%.</p>
+<h2 id="siamese-network">Siamese Network</h2>
+<p>Siamese networks consists of two or more identical networks inside that shares the same parameters and are identical in every way. This way if we input 2 images to a siamese network, it compares the feature vectors of both the image from which it can learn the similarities or differences between the images. Siamese networks basically learn a similarity function.</p>
+<p><img  src="https://miro.medium.com/max/2524/1*7bsezR_717wZ6JMfKIB_RQ.png"
+        alt="Model"/></p>
+<h2 id="the-solution">The Solution</h2>
+<p>To top such high accuracy obtained using VGG network,I had to use a different approach ie. Siamese Network. Siamese networks are used for &lsquo;one shot learning&rsquo; and are very effective for tasks like signature verification and face recognition which means that Siamese Network are effective in capturing and comparing very minute details present in the image. This is something that could prove beneficial for our problem.</p>
+<h2 id="implementation">Implementation</h2>
+<p>I labelled images of one class as zero and the other as one. Then created a set of image pairs for training containing pairs of image of same class as 0 and different classes as 1. This list is inputted to the siamese network for training and after training, the network should possibly understand the difference betweeen a parasitized and non parasitized cell image.<br>
+I verified this using the validation set image which was not used during the training process. I obtained an accuracy of 99.70% on validation set and 99.72% on training set which is better than the VGG based approach.</p>
+<p><a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb"target="_blank" rel="noopener noreferrer"><img  src="https://colab.research.google.com/assets/colab-badge.svg"
+        alt="Open in Colab"/></a>
+</p></article><section class="article labels"><a class="category" href=/blog/categories/computer-vision/>Computer Vision</a><a class="category" href=/blog/categories/deep-learning/>Deep Learning</a><a class="category" href=/blog/categories/attention/>Attention</a></section>
+</div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/blog/posts/attncnn/"><span class="iconfont icon-article"></span>Attention based CNN for Image Classification</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">Nived's Blog</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank" rel="noopener noreferrer">Notepadium</a></p></div>
+</section></body>
+
+</html>

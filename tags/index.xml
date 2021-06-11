@@ -10,6 +10,34 @@
     
     
     <item>
+      <title>Siamese Network for Image Classification</title>
+      <link>http://supertramp2.github.io/blog/posts/siamsenet/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://supertramp2.github.io/blog/posts/siamsenet/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;May 2021&lt;/strong&gt; || A project implementing a Siamese Network for image classification.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.tensorflow.org/datasets/catalog/malaria&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;dataset&lt;/a&gt;
+ I used consisted of malaria infected and uninfected cell images. The task is to perform binary classification and there are numerous implementation and research papers that worked on this problem. Using a pre-trained VGG network &lt;a href=&#34;https://peerj.com/articles/4568/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;this&lt;/a&gt;
+ paper, was able to obtain an accuracy of 99.4%.&lt;/p&gt;
+&lt;h2 id=&#34;siamese-network&#34;&gt;Siamese Network&lt;/h2&gt;
+&lt;p&gt;Siamese networks consists of two or more identical networks inside that shares the same parameters and are identical in every way. This way if we input 2 images to a siamese network, it compares the feature vectors of both the image from which it can learn the similarities or differences between the images. Siamese networks basically learn a similarity function.&lt;/p&gt;
+&lt;p&gt;&lt;img  src=&#34;https://miro.medium.com/max/2524/1*7bsezR_717wZ6JMfKIB_RQ.png&#34;
+        alt=&#34;Model&#34;/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-solution&#34;&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;To top such high accuracy obtained using VGG network,I had to use a different approach ie. Siamese Network. Siamese networks are used for &amp;lsquo;one shot learning&amp;rsquo; and are very effective for tasks like signature verification and face recognition which means that Siamese Network are effective in capturing and comparing very minute details present in the image. This is something that could prove beneficial for our problem.&lt;/p&gt;
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;I labelled images of one class as zero and the other as one. Then created a set of image pairs for training containing pairs of image of same class as 0 and different classes as 1. This list is inputted to the siamese network for training and after training, the network should possibly understand the difference betweeen a parasitized and non parasitized cell image.&lt;br&gt;
+I verified this using the validation set image which was not used during the training process. I obtained an accuracy of 99.70% on validation set and 99.72% on training set which is better than the VGG based approach.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
+        alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Attention based CNN for Image Classification</title>
       <link>http://supertramp2.github.io/blog/posts/attncnn/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
@@ -328,17 +356,6 @@ The training set is labelled, which means that for each image the digit present 
 &lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained.&lt;/p&gt;
 &lt;p&gt;The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;
 &lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/nivedwho/AadharMasking&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Colophon</title>
-      <link>http://supertramp2.github.io/blog/posts/colophon/</link>
-      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://supertramp2.github.io/blog/posts/colophon/</guid>
-      <description>&lt;p&gt;About the making of this &lt;a href=&#34;https://supertramp2.github.io/blog/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;blog website&lt;/a&gt;
- and my &lt;a href=&#34;https://supertramp2.github.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;main portfolio page&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     
