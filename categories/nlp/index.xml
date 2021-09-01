@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NLP on Nived&#39;s Blog</title>
-    <link>http://supertramp2.github.io/blog/categories/nlp/</link>
+    <link>http://nivedwho.github.io/blog/categories/nlp/</link>
     <description>Recent content in NLP on Nived&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://supertramp2.github.io/blog/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://nivedwho.github.io/blog/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Siamese Network for Image Classification</title>
-      <link>http://supertramp2.github.io/blog/posts/siamsenet/</link>
+      <link>http://nivedwho.github.io/blog/posts/siamsenet/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/siamsenet/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/siamsenet/</guid>
       <description>&lt;p&gt;&lt;strong&gt;May 2021&lt;/strong&gt; || A project implementing a Siamese Network for image classification.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
@@ -40,10 +40,10 @@ I verified this using the validation set image which was not used during the tra
     
     <item>
       <title>Attention based CNN for Image Classification</title>
-      <link>http://supertramp2.github.io/blog/posts/attncnn/</link>
+      <link>http://nivedwho.github.io/blog/posts/attncnn/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/attncnn/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/attncnn/</guid>
       <description>&lt;p&gt;&lt;strong&gt;April 2021&lt;/strong&gt; || A project implementing a deep learning attention based classification model proposed in the paper &lt;a href=&#34;https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Learn To Pay Attention&amp;rdquo;&lt;/a&gt;
  published in ICLR 2018 conference&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SelfAttnCNN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -71,10 +71,10 @@ It can be calculated using two ways - by taking a dot product or by a method cal
     
     <item>
       <title>Sentiment Analysis on Texts</title>
-      <link>http://supertramp2.github.io/blog/posts/emotions/</link>
+      <link>http://nivedwho.github.io/blog/posts/emotions/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/emotions/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/emotions/</guid>
       <description>&lt;p&gt;&lt;strong&gt;March 2021&lt;/strong&gt; || A project that implements a deep learning model for extracting emotions from the given text.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/ExtractEmotion.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
@@ -111,10 +111,10 @@ tokenizer.fit_on_texts(tweets)
     
     <item>
       <title>Summiting mountains using RL</title>
-      <link>http://supertramp2.github.io/blog/posts/climbingcars/</link>
+      <link>http://nivedwho.github.io/blog/posts/climbingcars/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/climbingcars/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/climbingcars/</guid>
       <description>&lt;p&gt;&lt;strong&gt;March 2021&lt;/strong&gt; || Tensorflow solution for the &lt;a href=&#34;https://gym.openai.com/envs/MountainCarContinuous-v0/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;MountainCarContinuous-v0&lt;/a&gt;
  problem&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/mountain_car.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -141,10 +141,10 @@ tokenizer.fit_on_texts(tweets)
     
     <item>
       <title>StyleGAN - A very popular GAN</title>
-      <link>http://supertramp2.github.io/blog/posts/stylegan/</link>
+      <link>http://nivedwho.github.io/blog/posts/stylegan/</link>
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/stylegan/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/stylegan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;February 2021&lt;/strong&gt; || A project reproducing the paper &lt;a href=&#34;https://openaccess.thecvf.com/content_CVPR_2019/papers/Karras_A_Style-Based_Generator_Architecture_for_Generative_Adversarial_Networks_CVPR_2019_paper.pdf&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;A Style-Based Generator Architecture for Generative Adversarial Networks&amp;rdquo;&lt;/a&gt;
  presented at CVPR 2019&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/StyleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -176,10 +176,10 @@ In spite of achieving superior results compared with the traditional other deep 
     
     <item>
       <title>SinGAN - A GAN that only needs a single image</title>
-      <link>http://supertramp2.github.io/blog/posts/singan/</link>
+      <link>http://nivedwho.github.io/blog/posts/singan/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/singan/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/singan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;January 2021&lt;/strong&gt; || A project reporducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1905.01164&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;SinGAN: Learning a Generative Model from a Single Natural Image&amp;rdquo;&lt;/a&gt;
  that won the ICCV 2019 best paper award&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SinGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -208,10 +208,10 @@ In spite of achieving superior results compared with the traditional other deep 
     
     <item>
       <title>Using GANs to create &#39;art&#39;</title>
-      <link>http://supertramp2.github.io/blog/posts/cyclegan/</link>
+      <link>http://nivedwho.github.io/blog/posts/cyclegan/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/cyclegan/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/cyclegan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;December 2020&lt;/strong&gt; || A project reproducing the results of the paper &lt;a href=&#34;https://arxiv.org/abs/1703.10593&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks&amp;rdquo;&lt;/a&gt;
  and making some additional changes to improve its performance.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/CycleGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -262,10 +262,10 @@ Firstly an image of either of the domain(say X) is taken and is fed into G that 
     
     <item>
       <title>Using GANs for Single Image Super Resolution</title>
-      <link>http://supertramp2.github.io/blog/posts/srgan/</link>
+      <link>http://nivedwho.github.io/blog/posts/srgan/</link>
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/srgan/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/srgan/</guid>
       <description>&lt;p&gt;&lt;strong&gt;December 2020&lt;/strong&gt; || A project reproducing the results of the paper &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&amp;ldquo;Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network&amp;rdquo;&lt;/a&gt;
  and making some additional changes to improve its performance.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SRGAN.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
@@ -305,10 +305,10 @@ The &lt;a href=&#34;https://ieeexplore.ieee.org/document/8099502&#34;target=&#34
     
     <item>
       <title>Working with CNN on MNIST dataset.</title>
-      <link>http://supertramp2.github.io/blog/posts/handwriting/</link>
+      <link>http://nivedwho.github.io/blog/posts/handwriting/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/handwriting/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/handwriting/</guid>
       <description>&lt;p&gt;&lt;strong&gt;September 2020&lt;/strong&gt; || Explorting the popular MNIST dataset and implementing a Covolution Neural Network for recognizing hadwritten digits.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
@@ -348,10 +348,10 @@ The training set is labelled, which means that for each image the digit present 
     
     <item>
       <title>Protecting privacy using PyTesseract</title>
-      <link>http://supertramp2.github.io/blog/posts/masking/</link>
+      <link>http://nivedwho.github.io/blog/posts/masking/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://supertramp2.github.io/blog/posts/masking/</guid>
+      <guid>http://nivedwho.github.io/blog/posts/masking/</guid>
       <description>&lt;p&gt;&lt;strong&gt;August 2020&lt;/strong&gt; || A project that masks out important text/numbers present in an image.&lt;/p&gt;
 &lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
 &lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained.&lt;/p&gt;
