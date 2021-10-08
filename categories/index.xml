@@ -5,10 +5,149 @@
     <description>Recent content in Categories on Nived&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://nivedwho.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The GSoC Experience</title>
+      <link>http://nivedwho.github.io/blog/posts/gsoc/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://nivedwho.github.io/blog/posts/gsoc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;September 2021&lt;/strong&gt; || Summer with TensorFlow as a Google Summer of Code Student&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://media.gettyimages.com/photos/working-at-the-beach-picture-id525037763&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://media.gettyimages.com/photos/working-at-the-beach-picture-id525037763&#34;
+        alt/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;what-is-gsoc&#34;&gt;What is GSoC?&lt;/h2&gt;
+&lt;p&gt;The Google Summer of Code is an annual program organized by Google for encoraging students to contribute to open source softwares. As a student you will be given an opportunity to propose your own project and once selected you will be paired with mentors who will help you to execute and complete the project. The official &lt;a href=&#34;https://summerofcode.withgoogle.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;GSoC website&lt;/a&gt;
+ has well written documentions of all the necessary informations regarding the program.&lt;/p&gt;
+&lt;h2 id=&#34;gsoc-with-tensorflow&#34;&gt;GSoC with TensorFlow&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tensorflow&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;TensorFlow&lt;/a&gt;
+ has a lot of libraries to contribute to. Every year they publish an &lt;a href=&#34;https://summerofcode.withgoogle.com/organizations/6035208098283520/?sp-page=2&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;ideas list&lt;/a&gt;
+ that mentions some of these libraries, contribution ideas and pre-requisites for students to take part in that project. You can also make a proposal on a new idea for a different library within the organization (which is what I have done) and this can make your proposal unique and stand out from the rest. This year my proposal involved contribution to a library called TensorFlow-GAN, check out the &lt;a href=&#34;https://github.com/nivedwho/GSoC-2021-TF-GAN&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;project repository&lt;/a&gt;
+ for more details. TensorFlow usually selects students based on only their project proposal while some other organizations even post some &amp;ldquo;micro-tasks&amp;rdquo; for evaluating the students. By looking at the ideas list and the selected projects in the past years you can identify what kind of projects are appreciated within the organizations.&lt;/p&gt;
+&lt;p&gt;Once selected a mentor will be assigned to you who will help you to improve your project scope, introduce you to the community, clear all your doubts and keep your project on track. The competitive part of GSoC is now over and you just have to work on your project and communicate with your mentors on a regular basis. My GSoC experience was really good and my mentors &lt;a href=&#34;https://github.com/margaretmz&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;@margaretmz&lt;/a&gt;
+ and &lt;a href=&#34;https://github.com/joel-shor&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;@joelshor&lt;/a&gt;
+ were as interested in the project as I was, and recieved a lot of support from them. We are writing a more detailed blog on the TF-GAN library and the GSoC project and will be published soon!&lt;/p&gt;
+&lt;h2 id=&#34;general-tips&#34;&gt;General tips&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-prepare&#34;&gt;How to prepare?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Find an organization that matches your interest, explore their GitHub page.&lt;/li&gt;
+&lt;li&gt;Go through the ideas list given out by the organization every year and the final work submission by the students. Both are publicly available in the GSoC page and this can give you an idea on what are the GSoC projects that generally happens in a particular organization.&lt;/li&gt;
+&lt;li&gt;Once you have decided on the organization look for blog posts and project proposals of the past GSoC students within that organization.&lt;/li&gt;
+&lt;li&gt;Start contributing to the library, solve issue, participate in discussions and do relavent personal projects and make sure to document them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;how-to-write-the-proposal&#34;&gt;How to write the proposal?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Explore GSoC discussions happening within the organization.&lt;/li&gt;
+&lt;li&gt;Think of a project idea that can actually help the organization, and having some past experience in working with similar projects defenitely helps. Both of these things should be clear for a person reading your proporal.&lt;/li&gt;
+&lt;li&gt;Refer to project proposals accepted by the organization in the past years. Try to follow similar formats.&lt;/li&gt;
+&lt;li&gt;Spend a lot of time writing the proposal. Some organizations provides feedback once you submit a draft possible and you can even ask people you know for a review.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;useful-links&#34;&gt;Useful links&lt;/h2&gt;
+&lt;p&gt;There are numerous resources available on the internet regarding GSoC and here are the links to some of them.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;No.&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Desription&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Link&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;All the necessary GSoC info&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Official Page&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Past GSoC projects&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/archive/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;GSoC Archive&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;My project repository&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/nivedwho/GSoC-2021-TF-GAN&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Repo Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Margaret&amp;rsquo;s blog as a GSoC Mentor&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://medium.com/google-developer-experts/mentoring-for-gsoc-2021-tensorflow-eecaa9392102&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Blog Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TensorFlow Hub&amp;rsquo;s GSoC project blog&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://blog.tensorflow.org/2021/09/tensorflow-hubs-experience-with-gsoc-2021.html&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Blog Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Vijay Tadikamalla&amp;rsquo;s TensorFlow proposal (2020)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://vijayphoenix.github.io/blog/gsoc-tensorflow/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Blog Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Guide to write a project proposal&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://google.github.io/gsocguides/student/writing-a-proposal#general-notes&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Blog Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;8&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Other Interesting blogs by past GSoCers&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://dakshp07.medium.com/complete-roadmap-for-gsoc-8591bab5bbb3&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;GSoC roadmap&lt;/a&gt;
+ / &lt;a href=&#34;https://medium.com/@i.oleks/how-to-apply-for-google-summer-of-code-95c1bfcd41a5&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;How to apply&lt;/a&gt;
+ / &lt;a href=&#34;https://medium.com/coding-blocks/one-stop-guide-to-google-summer-of-code-a9e803beeda7&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;One stop guide&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Repository containing numerous accepted GSoC proposals&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/Google-Summer-of-Code-Archive/gsoc-proposals-archive&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Repo Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Get project ideas for TensorFlow&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://discuss.tensorflow.org/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;TensorFlow Forum&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Interesting TensorFlow projects&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://twitter.com/search?q=%23TFcommunityspotlight&amp;amp;src=typed_query&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;TF Community Spotlight&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;12&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Get started with open soruce&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://up-for-grabs.net/#/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Up-For-Grabs.net&lt;/a&gt;
+ / &lt;a href=&#34;https://goodfirstissue.dev/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;goodfirstissue.net&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;13&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Google Open Source blogs&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://opensource.googleblog.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;List of other opportunities for students&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/dipakkr/A-to-Z-Resources-for-Students&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Repo Link&lt;/a&gt;
+ / &lt;a href=&#34;https://github.com/tapaswenipathak/Open-Source-Programs&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Repo Link&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
     
     <item>
       <title>Siamese Network for Image Classification</title>
@@ -343,20 +482,6 @@ The training set is labelled, which means that for each image the digit present 
 &lt;p&gt;After training the model can be predict the labels in the validation set and subsequently accuracy can also be obtained.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/DigitRec.ipynb&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;img  src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34;
         alt=&#34;Open in Colab&#34;/&gt;&lt;/a&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Protecting privacy using PyTesseract</title>
-      <link>http://nivedwho.github.io/blog/posts/masking/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://nivedwho.github.io/blog/posts/masking/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;August 2020&lt;/strong&gt; || A project that masks out important text/numbers present in an image.&lt;/p&gt;
-&lt;h3 id=&#34;all-about-this-project&#34;&gt;All about this project&lt;/h3&gt;
-&lt;p&gt;This problem seemed to be very difficult to me at first, but the magic of pytesseract amazed me. After going through some documentation I found how easy it is to extract all the texts present in the image. Using the library the position of each character in the image can also be obtained without any effort. After this I just drew a rectangle over the coordinates obtained.&lt;/p&gt;
-&lt;p&gt;The code part is specifically designed for masking out Aadhar numbers from Aadhar card images, where only the first 8 digits of the 12 digits needs to be masked out. Additionally another function is built to always rotate the image in the right manner,this is done by rotating the image until the aadhar number is detected by Pytesseract OCR.&lt;/p&gt;
-&lt;p&gt;Find the source code &lt;a href=&#34;https://github.com/nivedwho/AadharMasking&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     
