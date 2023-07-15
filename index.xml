@@ -1,0 +1,252 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog page</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on blog page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+      <item>
+        <title>The GSoC Experience</title>
+        <link>http://localhost:1313/gsoc/</link>
+        <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/gsoc/</guid>
+        <description>&lt;p&gt;An article on Google Summer of Code and how to approach as a student with almost zero experience.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/gsoc.jpg&#34; alt=&#34;fun&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-gsoc&#34;&gt;What is GSoC?&lt;/h1&gt;
+&lt;p&gt;The &lt;strong&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/&#34;&gt;Google Summer of Code&lt;/a&gt;&lt;/strong&gt; is an annual program organized by Google for encoraging students to contribute to open source softwares. As a student you will be given an opportunity to propose your own project and once selected you will be paired with mentors who will help you to execute and complete the project. The official GSoC website has well written documentions of all the necessary informations regarding the program.&lt;/p&gt;
+&lt;h1 id=&#34;gsoc-with-tensorflow&#34;&gt;GSoC with TensorFlow&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/tensorflow&#34;&gt;TensorFlow&lt;/a&gt;&lt;/strong&gt; has a lot of libraries to contribute to. Every year they publish an &lt;strong&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/archive/2021/organizations/6649841832165376&#34;&gt;ideas list&lt;/a&gt;&lt;/strong&gt; that mentions some of these libraries, contribution ideas and pre-requisites for students to take part in that project. You can also make a proposal on a new idea for a different library within the organization (which is what I have done) and this can make your proposal unique and stand out from the rest. This year my proposal involved contribution to a library called TensorFlow-GAN, check out the &lt;strong&gt;&lt;a href=&#34;https://github.com/nivedwho/GSoC-2021-TF-GAN&#34;&gt;project repository&lt;/a&gt;&lt;/strong&gt; for more details. TensorFlow usually selects students based on only their project proposal while some other organizations even post some “micro-tasks” for evaluating the students. By looking at the ideas list and the selected projects in the past years you can identify what kind of projects are appreciated within the organizations.&lt;/p&gt;
+&lt;p&gt;Once selected a mentor will be assigned to you who will help you to improve your project scope, introduce you to the community, clear all your doubts and keep your project on track. The competitive part of GSoC is now over and you just have to work on your project and communicate with your mentors on a regular basis. My GSoC experience was really good and my mentors &lt;strong&gt;&lt;a href=&#34;https://github.com/margaretmz&#34;&gt;@margaretmz&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;https://github.com/joelshor&#34;&gt;@joelshor&lt;/a&gt;&lt;/strong&gt; were as interested in the project as I was, and recieved a lot of support from them. We are writing a more detailed blog on the TF-GAN library and the GSoC project and will be published soon!&lt;/p&gt;
+&lt;h1 id=&#34;general-tips&#34;&gt;General tips&lt;/h1&gt;
+&lt;h2 id=&#34;how-to-prepare&#34;&gt;How to prepare?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Find an organization that matches your interest, explore their GitHub page.&lt;/li&gt;
+&lt;li&gt;Go through the ideas list given out by the organization every year and the final work submitted by the students. Both are publicly available and this can give you an idea on what kind of projects are usually carried out in each organizations.&lt;/li&gt;
+&lt;li&gt;Once you have decided on the organization look for blog posts and project proposals of the past GSoC students within that organization.&lt;/li&gt;
+&lt;li&gt;Start contributing to the library, solve issue, participate in discussions and do relavent personal projects and make sure to document them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-write-the-proposal&#34;&gt;How to write the proposal?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Explore GSoC discussions happening within the organization.&lt;/li&gt;
+&lt;li&gt;Think of a project idea that can actually help the organization, and having some past experience in working with similar projects defenitely helps. Both of these things should be clear for a person reading your proporal.&lt;/li&gt;
+&lt;li&gt;Refer to project proposals accepted by the organization in the past years. Try to follow similar formats.&lt;/li&gt;
+&lt;li&gt;Spend a lot of time writing the proposal. Some organizations provides feedback once you submit a draft possible and you can even ask people you know for a review.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;useful-links&#34;&gt;Useful links&lt;/h2&gt;
+&lt;p&gt;There are numerous resources available on the internet regarding GSoC and here are the links to some of them.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Desription&lt;/strong&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Link&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;All the necessary GSoC info&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/&#34;&gt;Official Page&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Past GSoC projects&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://summerofcode.withgoogle.com/archive/&#34;&gt;GSoC Archive&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;My project repository&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/nivedwho/GSoC-2021-TF-GAN&#34;&gt;Repo Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Margaret’s blog as a GSoC Mentor&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://medium.com/google-developer-experts/mentoring-for-gsoc-2021-tensorflow-eecaa9392102&#34;&gt;Blog Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TensorFlow Hub’s GSoC project blog&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://blog.tensorflow.org/2021/09/tensorflow-hubs-experience-with-gsoc-2021.html&#34;&gt;Blog Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Vijay Tadikamalla’s TensorFlow proposal (2020)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://vijayphoenix.github.io/blog/gsoc-tensorflow/&#34;&gt;Blog Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Guide to write a project proposal&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://google.github.io/gsocguides/student/writing-a-proposal#general-notes&#34;&gt;Blog Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Other Interesting blogs by past GSoCers&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://dakshp07.medium.com/complete-roadmap-for-gsoc-8591bab5bbb3&#34;&gt;GSoC Roadmap&lt;/a&gt; / &lt;a href=&#34;https://medium.com/@i.oleks/how-to-apply-for-google-summer-of-code-95c1bfcd41a5&#34;&gt;How to Apply&lt;/a&gt; / &lt;a href=&#34;https://medium.com/coding-blocks/one-stop-guide-to-google-summer-of-code-a9e803beeda7&#34;&gt;One stop guide&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Repository containing numerous accepted GSoC proposals&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/Google-Summer-of-Code-Archive/gsoc-proposals-archive&#34;&gt;Repo Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Get project ideas for TensorFlow&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://discuss.tensorflow.org/&#34;&gt;TensorFlow Forum&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Interesting TensorFlow projects&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://twitter.com/search?q=%23TFcommunityspotlight&amp;amp;src=typed_query&#34;&gt;TF Community Spotlight&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Get started with open soruce&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://up-for-grabs.net/#&#34;&gt;Up-For-Grabs.net&lt;/a&gt;/ &lt;a href=&#34;https://goodfirstissue.dev/&#34;&gt;goodfirstissue.net&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Google Open Source blogs&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://opensource.googleblog.com/&#34;&gt;Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;List of other opportunities for students&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://github.com/dipakkr/A-to-Z-Resources-for-Students&#34;&gt;Repo Link&lt;/a&gt; / &lt;a href=&#34;https://github.com/tapaswenipathak/Open-Source-Programs&#34;&gt;Repo Link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
+        <title>Siamese Network for Image Classification</title>
+        <link>http://localhost:1313/siamese/</link>
+        <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/siamese/</guid>
+        <description>&lt;p&gt;A project implementing a Siamese Network for image classification.&lt;/p&gt;
+&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;
+&lt;p&gt;The dataset I used consisted of malaria infected and uninfected cell images. The task is to perform binary classification and there are numerous implementation and research papers that worked on this problem. Using a pre-trained VGG network this paper, was able to obtain an accuracy of 99.4%.&lt;/p&gt;
+&lt;h1 id=&#34;siamese-network&#34;&gt;Siamese Network&lt;/h1&gt;
+&lt;p&gt;Siamese networks consists of two or more identical networks inside that shares the same parameters and are identical in every way. This way if we input 2 images to a siamese network, it compares the feature vectors of both the image from which it can learn the similarities or differences between the images. Siamese networks basically learn a similarity function.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/siamese.png&#34; alt=&#34;siamese&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;the-solution&#34;&gt;The Solution&lt;/h1&gt;
+&lt;p&gt;To top such high accuracy obtained using VGG network,I had to use a different approach ie. Siamese Network. Siamese networks are used for ‘one shot learning’ and are very effective for tasks like signature verification and face recognition which means that Siamese Network are effective in capturing and comparing very minute details present in the image. This is something that could prove beneficial for our problem.&lt;/p&gt;
+&lt;h1 id=&#34;implementation&#34;&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;I labelled images of one class as zero and the other as one. Then created a set of image pairs for training containing pairs of image of same class as 0 and different classes as 1. This list is inputted to the siamese network for training and after training, the network should possibly understand the difference betweeen a parasitized and non parasitized cell image.
+I verified this using the validation set image which was not used during the training process. I obtained an accuracy of 99.70% on validation set and 99.72% on training set which is better than the VGG based approach.&lt;/p&gt;
+&lt;p&gt;Open the notebook in Google Colaboratory : &lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SiameseNet.ipynb&#34;&gt;&lt;img src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34; alt=&#34;colab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
+        <title>Attention based CNN for Image Classification</title>
+        <link>http://localhost:1313/attn/</link>
+        <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/attn/</guid>
+        <description>&lt;p&gt;A project implementing a deep learning attention based classification model proposed in the paper &lt;a href=&#34;https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf&#34;&gt;“Learn To Pay Attention”&lt;/a&gt; published in ICLR 2018 conference.&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;The basic idea behind attention models is to focus on that parts of a problem which are important. Such a model was introduced in 2014 and was mainly focused on solving NLP problem but eventually was found to be useful in the field of computer vision. Jetley et.al in the paper “Learn To Pay Attention” used attention based mechanism to solve simple image classification problem.&lt;/p&gt;
+&lt;h1 id=&#34;the-model&#34;&gt;The Model&lt;/h1&gt;
+&lt;p&gt;The most important concept discused in this paper would be ‘attention maps’ which is a scalar matrix that represents activations of different locations of an image with respect to a target. With the help of attention maps the CNNs will eventually learn which part of an image is important for a particaular task. The image below is taken from the paper &lt;a href=&#34;https://arxiv.org/abs/1610.02391&#34;&gt;“Grad-CAM: Gradient-weighted Class Activation Mapping”&lt;/a&gt; and the attention map is trying to perform a similar task.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/attn.png&#34; alt=&#34;attention&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The authors of the paper takes a VGG network and adds attention layers between a number of layers(7,10 and 13). Attention is calculated by feeding the output of some layer ‘n’ as input to the attention layer, which then calculates an “attention mask” (Binary matrix) and is multiplied with the input. This process is repeated for layers 10 and 13 also. The output of of these attention layers is represented by “g_a1”, “g_a2” and “g_a3” are then fed into the fully connected layers for classification.&lt;/p&gt;
+&lt;h1 id=&#34;working-of-the-attention-part&#34;&gt;Working of the ‘attention’ part&lt;/h1&gt;
+&lt;p&gt;Firstly a ‘compatibility score’ is calculated by comparing local features with the global ones. The term ‘global feature’ represents output of some convolution layer through which the input image is passed and its effective reseptive field will cover the whole image, whereas ‘local feature’ represents the features extracted from some subset of the original image. Similar to what we see in the figure above, the score will be high when a local patch is placed over the dog’s face since it is one of the most dominant feature in the image that helps in classifying it correctly. It can be calculated using two ways - by taking a dot product or by a method called ‘parametrised compatibility.’&lt;/p&gt;
+&lt;p&gt;Secondly the attention weights are calculated by transforming the compatibiltiy score to range of (0,1). This is done by using softmax function.&lt;/p&gt;
+&lt;p&gt;Thirdly using this attention weight, a weighted combination of the outputs of that particular layer is taken.&lt;/p&gt;
+&lt;h1 id=&#34;implementation&#34;&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;The authors of the paper have provided the source code for the proposed model but I have modified it a little bit and can now be run on Google Colaboratory. The batch size and number of epochs had to be reduced but still the accuracy of the model was seen to be increasing with time.&lt;/p&gt;
+&lt;p&gt;Open the notebook in Google Colaboratory : &lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/SelfAttnCNN.ipynb&#34;&gt;&lt;img src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34; alt=&#34;colab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
+        <title>Sentiment Analysis on Texts</title>
+        <link>http://localhost:1313/sentiment/</link>
+        <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/sentiment/</guid>
+        <description>&lt;p&gt;A project that implements a deep learning model for extracting emotions from the given text.&lt;/p&gt;
+&lt;h1 id=&#34;basic-steps-involved&#34;&gt;Basic Steps Involved&lt;/h1&gt;
+&lt;h2 id=&#34;dataset&#34;&gt;Dataset&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/dair-ai/emotion_dataset&#34;&gt;Twitter Emotion Dataset&lt;/a&gt; is used for training the model. The dataset consinsts of three folders - Train, Test and Labels for test (For evaluating and getting the accuracy). The train folder consists of a large number of tweets labelled with corresponding informations. The Hugging Face’s nlp package is downloaded firstly and then the ‘emotion’ dataset is downloaded from it.&lt;/p&gt;
+&lt;h2 id=&#34;tokenize-the-data&#34;&gt;Tokenize the data&lt;/h2&gt;
+&lt;p&gt;The tweets cannot be passed directly to the model and it requires to be tokenized. Tokenizing involves mapping each unique word to a particular token/number. We also set the limit to 10000 words and other less frequently appering words are ignored.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tokenizer = Tokenizer(num_words=10000, oov_token=&amp;#39;&amp;lt;UNK&amp;gt;&amp;#39;)
+
+tokenizer.fit_on_texts(tweets)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After tokeninizing, the tweet ‘I didn’t feel humiliated’ is changed to [2, 139, 3, 679] which the model understands.&lt;/p&gt;
+&lt;h2 id=&#34;padding-and-truncating-data&#34;&gt;Padding and truncating data&lt;/h2&gt;
+&lt;p&gt;The dataset consists of tweets of varying length which can be problematic. After visualizing the dataset it is found that the avg length of tweets are between 10-20 and very few exists with length more than 50. Therefore each tweet is changed to a seqence of length 50 and the ones greater than will be truncated and split.&lt;/p&gt;
+&lt;p&gt;The classes present in the dataset are ‘joy’, ‘sadness’, ‘surprise’, ‘fear’, ‘love’ and ‘anger’. These classes also needs to be labelled from 0-6 before implementing the network.&lt;/p&gt;
+&lt;h2 id=&#34;creating-the-model&#34;&gt;Creating the model&lt;/h2&gt;
+&lt;p&gt;Now that the data is processed to a proper format, model can be created. It is implemented using the sequential class from keras consisting of following layers :
+&lt;img src=&#34;http://localhost:1313/images/sentiment-1.png&#34; alt=&#34;s1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Like other multi-class classification problems, here also categorical crossentropy is used as the loss functions.&lt;/p&gt;
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/sentiment-2.png&#34; alt=&#34;r1&#34;&gt;
+Like other multi-class classification problems, here also categorical crossentropy is used as the loss functions.&lt;/p&gt;
+&lt;p&gt;Also the confusion matrix below justifies the efficiency of the model.
+&lt;img src=&#34;http://localhost:1313/images/sentiment-3.png&#34; alt=&#34;r1&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;working-on-user-input&#34;&gt;Working on User Input&lt;/h1&gt;
+&lt;p&gt;Although the model got good accuracy scores it doesn’t mean it will be as good for every user inputs, still it does work for most of the time. This lack of performance shows the need for a better model or a better dataset even.&lt;/p&gt;
+&lt;p&gt;Open the notebook in Google Colaboratory : &lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/ExtractEmotion.ipynb&#34;&gt;&lt;img src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34; alt=&#34;colab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
+        <title>Summiting Hills using RL</title>
+        <link>http://localhost:1313/rl/</link>
+        <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/rl/</guid>
+        <description>&lt;p&gt;Tensorflow solution for the &lt;a href=&#34;https://gym.openai.com/envs/MountainCarContinuous-v0/&#34;&gt;MountainCarContinuous-v0&lt;/a&gt; problem.&lt;/p&gt;
+&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;
+&lt;p&gt;This was the first time I tried solving an OpenAI Gym problem and this problem looked interesting and was easy to understand.&lt;/p&gt;
+&lt;p&gt;The problem is about a car placed at the bottom of a hill and our goal is to write a program that helps the car climb the hill. But the car’s engine is not powerful enough to do this by itself hence we need to move the car back and forth until it gains sufficient momentum to climb the hill. Lesser the energy consumed, greater will be the score.&lt;/p&gt;
+&lt;p&gt;The source code for the problem can be seen &lt;a href=&#34;https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py&#34;&gt;here.&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The reward is -1 for each step until the goal position (0.5)is reached. The code should stop after reaching the goal or after 200 iterations.&lt;/p&gt;
+&lt;h1 id=&#34;the-solution&#34;&gt;The Solution&lt;/h1&gt;
+&lt;p&gt;The first thing I did is explore the problem and see how the car is moving. For that all I had to do was to load the mountain car enviornment and call the “env.action_space.sample()” for getting the actions. This moves the car back and forth with the values specified in its &lt;a href=&#34;https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py&#34;&gt;source code.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After 200 iterations code stopped and the car obviously was unable to climb the mountain. More importantly this lets us see the data generated by the car - position, velocity and its relation with the reward.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/nivedwho/Images/blob/main/dumbcar.gif?raw=true&#34; alt=&#34;dumb car&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Before implementing a neural network we need sufficient data from which the car can learn to move correctly. To do this I have implemented the function “model_data_preperation” that randomly moves the car using the 3 actions- 0(move left), 1(rest) and 2(move right). Instead of setting the reward -1 for all actions, it is set as 1 if the car’s position is getting closer to the top of the mountain. Once the score is greater than -198 the data is added to the list of accepted score. Now we have generated the data that tells us what movements are beneficial for us and what all are not. The game is similarly played for 10000 times.&lt;/p&gt;
+&lt;p&gt;Nextly I have made a sequencial model that learns from the generated data and it is trained.&lt;/p&gt;
+&lt;p&gt;Again the car is made to move, only this time the actions are set by the trained model and the reward is set like it was at first, ie. always = -1 unless the goal position is reached.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/nivedwho/Images/blob/main/smartcar.gif?raw=true&#34; alt=&#34;smart car&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Open the notebook in Google Colaboratory : &lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/mountain_car.ipynb&#34;&gt;&lt;img src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34; alt=&#34;colab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
+        <title>StyleGAN - A very popular GAN</title>
+        <link>http://localhost:1313/stylegan/</link>
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/stylegan/</guid>
+        <description>&lt;p&gt;A project reproducing the paper “A Style-Based Generator Architecture for Generative Adversarial Networks” presented at CVPR 2019&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Ever since Generative Adversarial Network (GAN) was introduced by Ian GoodFellow and his colleagues, it has proved to be an efficient solution to many unsupervised learning problems. In spite of achieving superior results compared with the traditional other deep learning models, the generator network in GANs continues to remain as a black box. It takes an input from latent space and generates an image and sometimes the generated samples can be completely random. This lack of control over the generator can hinder the performance of GANs and the StyleGAN model proposed by Karras et al. addresses this issue and provides a solution.&lt;/p&gt;
+&lt;h1 id=&#34;stylegan-model&#34;&gt;StyleGAN Model&lt;/h1&gt;
+&lt;p&gt;The StyleGAN is a type of adversarial network that gives us control over the generator which means that it can allow us to adjust certain features in an image by tuning the hyperparameters. StyleGAN architecture modifies the generator network such that it no longer takes points from latent space rather it uses two new sources - a standalone mapping network and a noise layer. The mapping network as seen in the figure, maps the latent vector to an intermediate latent space after passing through several fully connected layers. This new latent space is then used to control the features of the image generated by the generator by making use of AdaIn layers.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/StyleGAN.png&#34; alt=&#34;styleg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Adaptive instance normalization is one of the key components used in the StyleGAN model. Another reason for the superiority of StyleGAN, is the usage of a progressive growing method which was introduced by Karras et.al in the paper on ProGAN. This means that the model initially generates a low resolution sample and then progressively increases the resolution to the required value. This ensures that the generator first learns high level features and overcomes simple problems before moving onto focusing on finer details resulting in a more stabilized model. StyleGAN also adds noise after each convolution layer increasing the ‘stochastic variation’ in the generated sample which allows us to change fine details present in the image while tuning the hyperparameters.&lt;/p&gt;
+&lt;h1 id=&#34;implementation&#34;&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;A new clean version[6] of the StyleGAN model was implemented. The model was trained on the popular MNIST dataset. The generator starts by generating 4x4 images and then progressively increases resolution to 28x28. Even though the MNIST dataset doesn’t do justice in showing the stunning performance of StyleGAN, the reason for taking it is that it’s computationally less demanding. StyleGAN was trained on high resolution human face images[8] by the original authors[7], but it was difficult to do so in the Colab notebook. Satisfactory results were not obtained even after several hours. On the other hand MNIST dataset contains 28x28 images which makes the generator’s job easier and the training process faster. The architecture of generator and discriminator is used exactly the same as the original implementation[6] and the training parameters are adjusted for the best performance.&lt;/p&gt;
+&lt;p&gt;My implementation can be found here :
+&lt;a href=&#34;https://colab.research.google.com/github/nivedwho/Colab/blob/main/StyleGAN.ipynb&#34;&gt;&lt;img src=&#34;https://colab.research.google.com/assets/colab-badge.svg&#34; alt=&#34;colab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
+&lt;p&gt;After training :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/styler1.png&#34; alt=&#34;styler1&#34;&gt;
+&lt;img src=&#34;http://localhost:1313/images/styler2.png&#34; alt=&#34;styler2&#34;&gt;
+&lt;img src=&#34;http://localhost:1313/images/styler3.png&#34; alt=&#34;styler3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The second figure shows the generated samples with a truncation value of 0.9 and the third figure shows the samples that are generated with a truncation value of 0.5. The truncation value is a factor that decides the similarity between the generated and original samples, in other words lower the truncation value more similar will be the input and output. This is the magic of StyleGANs! While working on human face datasets the truncation value lets us change different attributes of the image like skin color, hair color&lt;/p&gt;
+</description>
+      </item>
+      
+    
+  </channel>
+</rss>

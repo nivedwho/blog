@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_128x128.png" sizes="128x128">
+
+    <title>
+      
+      
+         Attention based CNN for Image Classification 
+      
+    </title>
+    <link rel="canonical" href="http://localhost:1313/attn/">
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+    text-decoration-skip: ink;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .left-justify {
+    float: left;
+  }
+
+  .right-justify {
+    float:right;
+  }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, time {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content time {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(2) {
+    float:right;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+</style>
+
+
+    
+  </head>
+
+  <body>
+    <section id=nav>
+      <h1><a href="http://localhost:1313/">Nived&#39;s Archive</a></h1>
+      <ul>
+        
+          <li><a href="https://nivedwho.github.io/about">About</a></li>
+        
+          <li><a href="https://github.com/nivedwho">GitHub</a></li>
+        
+          <li><a href="https://nivedwho.github.io/">Homepage</a></li>
+        
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> Attention based CNN for Image Classification </h1>
+
+  
+    <div id=sub-header>
+      April 2021 · 3 minute read
+    </div>
+  
+
+  <div class="entry-content">
+    <p>A project implementing a deep learning attention based classification model proposed in the paper <a href="https://www.robots.ox.ac.uk/~tvg/publications/2018/LearnToPayAttention_v5.pdf">“Learn To Pay Attention”</a> published in ICLR 2018 conference.</p>
+<h1 id="introduction">Introduction</h1>
+<p>The basic idea behind attention models is to focus on that parts of a problem which are important. Such a model was introduced in 2014 and was mainly focused on solving NLP problem but eventually was found to be useful in the field of computer vision. Jetley et.al in the paper “Learn To Pay Attention” used attention based mechanism to solve simple image classification problem.</p>
+<h1 id="the-model">The Model</h1>
+<p>The most important concept discused in this paper would be ‘attention maps’ which is a scalar matrix that represents activations of different locations of an image with respect to a target. With the help of attention maps the CNNs will eventually learn which part of an image is important for a particaular task. The image below is taken from the paper <a href="https://arxiv.org/abs/1610.02391">“Grad-CAM: Gradient-weighted Class Activation Mapping”</a> and the attention map is trying to perform a similar task.</p>
+<p><img src="http://localhost:1313/images/attn.png" alt="attention"></p>
+<p>The authors of the paper takes a VGG network and adds attention layers between a number of layers(7,10 and 13). Attention is calculated by feeding the output of some layer ‘n’ as input to the attention layer, which then calculates an “attention mask” (Binary matrix) and is multiplied with the input. This process is repeated for layers 10 and 13 also. The output of of these attention layers is represented by “g_a1”, “g_a2” and “g_a3” are then fed into the fully connected layers for classification.</p>
+<h1 id="working-of-the-attention-part">Working of the ‘attention’ part</h1>
+<p>Firstly a ‘compatibility score’ is calculated by comparing local features with the global ones. The term ‘global feature’ represents output of some convolution layer through which the input image is passed and its effective reseptive field will cover the whole image, whereas ‘local feature’ represents the features extracted from some subset of the original image. Similar to what we see in the figure above, the score will be high when a local patch is placed over the dog’s face since it is one of the most dominant feature in the image that helps in classifying it correctly. It can be calculated using two ways - by taking a dot product or by a method called ‘parametrised compatibility.’</p>
+<p>Secondly the attention weights are calculated by transforming the compatibiltiy score to range of (0,1). This is done by using softmax function.</p>
+<p>Thirdly using this attention weight, a weighted combination of the outputs of that particular layer is taken.</p>
+<h1 id="implementation">Implementation</h1>
+<p>The authors of the paper have provided the source code for the proposed model but I have modified it a little bit and can now be run on Google Colaboratory. The batch size and number of epochs had to be reduced but still the accuracy of the model was seen to be increasing with time.</p>
+<p>Open the notebook in Google Colaboratory : <a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/SelfAttnCNN.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a></p>
+
+  </div>
+</section>
+
+  
+</body>
+</html>
+
+
+
