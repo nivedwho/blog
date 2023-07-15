@@ -11,6 +11,79 @@
     
       
       <item>
+        <title>Intro to 3D Deep Learning</title>
+        <link>https://nivedwho.github.io/blog/3ddl/</link>
+        <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nivedwho.github.io/blog/3ddl/</guid>
+        <description>&lt;p&gt;An article written by &lt;a href=&#34;https://www.linkedin.com/in/margaretmz/&#34;&gt;Margaret Maynard-Reid (ML GDE)&lt;/a&gt; and Me originally published in &lt;a href=&#34;https://towardsdatascience.com/intro-to-3d-deep-learning-e992f7efa6ee&#34;&gt;Towards Data Science&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;3D deep learning is an interesting area with a wide range of real-world applications: art and design, self-driving cars, sports, agriculture, biology, robotics, virtual reality and augmented reality. This blog post provides an introduction to 3D deep learning: 3D data representations, computer vision tasks and learning resources.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dintro.png&#34; alt=&#34;Image by author (Margaret)&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3d-data&#34;&gt;3D Data&lt;/h2&gt;
+&lt;p&gt;Data is super important for training machine learning models. One of the biggest differences between 2D and 3D deep learning is the data representation format.&lt;/p&gt;
+&lt;p&gt;Regular images are typically represented in 1D or 2D arrays. 3D images, on the other hand, can have different representation formats and here are a few most popular ones: multi-view, volumetric, point cloud, mesh and volumetric display. Let’s take a look at each data representation illustrated with images.&lt;/p&gt;
+&lt;h3 id=&#34;multi-view-images&#34;&gt;Multi-view images&lt;/h3&gt;
+&lt;p&gt;These can be captured by positioning multiple cameras that take photos from different angles of the same object or scene. Here is what a chair looks like with images from ShapeNet which is a richly-annotated, large-scale repository of shapes represented by 3D CAD models of objects.
+&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dmultiview.gif&#34; alt=&#34;multiview&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;point-cloud&#34;&gt;Point cloud&lt;/h3&gt;
+&lt;p&gt;In a point cloud dataset, each image is represented by a set of points (x, y, z coordinates), which are collected from raw sensors. Point cloud data are typically captured by LiDAR sensors or converted from mesh data.&lt;/p&gt;
+&lt;p&gt;Here is what a chair looks like in Point cloud representation from the &lt;a href=&#34;https://modelnet.cs.princeton.edu/&#34;&gt;ModelNet10&lt;/a&gt; dataset.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/mnet10.png&#34; alt=&#34;multiview&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mesh&#34;&gt;Mesh&lt;/h3&gt;
+&lt;p&gt;A mesh is the typical building block for 3D modeling with software such as Blender, Autodesk Maya or Unreal Engine etc. Unlike in point cloud where each 3D object is made of points, the mesh representation consists of a set of points and in addition the relationship of these points (edges) and faces. One type of mesh is polygon mesh with faces in the shape of triangles or quads.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dmesh.png&#34; alt=&#34;Image by author (Margaret)&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;volumetric-display&#34;&gt;Volumetric display&lt;/h3&gt;
+&lt;p&gt;In the volumetric representation, each image is solid and made of voxels: the 3D equivalent of pixels in 2D images.&lt;/p&gt;
+&lt;p&gt;3D modeling software such as Blender can be used to voxelize 3D models and here is an example of a voxelized bunny:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dvolume.png&#34; alt=&#34;Image by author (Margaret)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Volumetric representation can be obtained with real-time scanning or converted from 3D point cloud or meshes. Here is an example from scan-net.org, which has RGB-D scans of indoor scenes with semantic voxel labeling.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dvolume2.png&#34; alt=&#34;Image from scan-net.org/&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3d-computer-vision-tasks&#34;&gt;3D Computer Vision Tasks&lt;/h2&gt;
+&lt;p&gt;Just like 2D computer vision, 3D tasks include image classification, segmentation, pose estimation and image synthesis with generative models. Below we will go over a few examples of these tasks. And since 3D data has so many different representations, note that the examples we mention below likely will only cover some of the 3D data formats.&lt;/p&gt;
+&lt;h3 id=&#34;3d-image-classification&#34;&gt;3D Image Classification&lt;/h3&gt;
+&lt;p&gt;Image classification is a well-solved problem in both 2D and 3D computer vision.&lt;/p&gt;
+&lt;p&gt;3D data classification involves the task of identifying a single 3D or multiple 3D objects present in a scene. It would enable us to recognize and identify objects by capturing their shape, size, orientation etc. which is vital when dealing with real-world applications such as augmented reality (AR), self-driving cars, and robotics.&lt;/p&gt;
+&lt;p&gt;This task is similar to 2D image classification with the differences lying in the model architecture. VoxNet (2015) was one of the initial works that made use of 3D CNNs for single 3D object detection. It takes in 3D volume data or a sequence of 2D frames as inputs and applies a 3D kernel for convolution operation. 3D CNNs are a powerful model for learning representations for volumetric data. More recent works such as SampleNet (2020) introduces techniques to sample point clouds which include points representing a visual scene, resulting in improved classification performance as well as for other tasks such as 3D reconstruction.&lt;/p&gt;
+&lt;p&gt;Here is a great tutorial on Keras.io for learning 3D image classification: &lt;a href=&#34;https://keras.io/examples/vision/pointnet/&#34;&gt;Point Cloud Classification with PointNet.&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3d-object-detection--tracking&#34;&gt;3D Object Detection &amp;amp; Tracking&lt;/h3&gt;
+&lt;p&gt;Object detection and tracking in 3D is similar to the task in 2D but with additional challenges. 3D object detection task we work with either voxels or points.&lt;/p&gt;
+&lt;p&gt;3D object detection and tracking is very useful in self-driving cars. We can use RGB images, point cloud data or fused data input from both camera and sensor (LiDAR) point clouds to train 3D object detection and tracking.&lt;/p&gt;
+&lt;p&gt;Object detection and tracking can also be used in augmented reality to superimpose virtual items into the real world scenes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dobjectdet.gif&#34; alt=&#34;Image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3d-image-segmentation&#34;&gt;3D Image Segmentation&lt;/h3&gt;
+&lt;p&gt;As in 2D image segmentation tasks, 3D image segmentation also includes semantic, instance and part segmentation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dseg.png&#34; alt=&#34;3d segment&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Depending on the 3D data representation, different techniques are utilized for the segmentation task. Some of the popular 3D dataset for segmentation includes ScanNet, ShapeNet and Semantic3D.&lt;/p&gt;
+&lt;p&gt;Some applications of 3D segmentation include using drones for scene analysis, 3D map reconstruction, and medical diagnosis. Interestingly, semantic segmentation also helps with depth estimation.&lt;/p&gt;
+&lt;h3 id=&#34;3d-pose-estimation&#34;&gt;3D Pose Estimation&lt;/h3&gt;
+&lt;p&gt;3D pose estimation is a process involving the prediction of the actual spatial positioning of a 3D object from a 2D image given as input. Once we obtain information such as 3D rotation and translation of an object in 2D image, we can transform it into 3D space. This problem is highly active in the field of robotics. A robot might be able to see various objects using a camera, but merely seeing an object is not enough to actually grasp it.&lt;/p&gt;
+&lt;p&gt;For tackling this problem, usually a number of significant features known as keypoints are detected, identified and tracked for each object. One of the early works addressing this problem is by Shubham Tulsiani et.al (2015), where they have introduced a CNN based approach for reliably predicting both viewpoints and keypoints of an object from a 2D image.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://nivedwho.github.io/blog/images/3dpose.png&#34; alt=&#34;3d pose&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Other important applications of 3D pose estimation include augmented reality and virtual try-on in fashion.&lt;/p&gt;
+&lt;h3 id=&#34;3d-image-reconstruction&#34;&gt;3D Image Reconstruction&lt;/h3&gt;
+&lt;p&gt;3D Image Reconstruction involves the task of understanding the 3D structure and orientation of an image from keypoints, segmentation, depth maps and other forms of data representing knowledge of the 3D model. With the abundance of data, deep learning based techniques have also been popular in solving this problem. These works are based on different models such as CNNs, RNNs, Transformers, VAEs and GANs.&lt;/p&gt;
+&lt;h4 id=&#34;multi-view-reconstruction&#34;&gt;Multi-view reconstruction&lt;/h4&gt;
+&lt;p&gt;This is a task of reconstructing the 3D view of an object using a collection of 2D images representing the scene. The deep learning model based on this technique extracts useful information from the images and explores the relationship between the different views.&lt;/p&gt;
+&lt;h4 id=&#34;single-view-reconstruction&#34;&gt;Single-view reconstruction&lt;/h4&gt;
+&lt;p&gt;In single view reconstruction the 3D view of the object is done using a single 2D image. This is a much more complex task that requires the model to infer geometrical structure and visual features such as texture and shading, just from an image representing a single view of the object. However there has been numerous research in the field such as GAN2Shape, PHORUM that has demonstrated success in generating photorealistic 3D structures with accurate color, texture and shading representations.&lt;/p&gt;
+&lt;h4 id=&#34;3d-reconstruction-with-nerf&#34;&gt;3D reconstruction with NeRF&lt;/h4&gt;
+&lt;p&gt;NeRF explores the task of 3D reconstruction using a single continuous 5D coordinate as inputs. The coordinate represents the spatial location and the viewing directions. It outputs the volume density and the view dependent RGB color at the given location. This minimizes the error that is introduced when rendering multiple images which was previously used for 3d reconstruction tasks.&lt;/p&gt;
+&lt;p&gt;This concept was introduced by the paper: Representing Scenes as Neural Radiance Fields for View Synthesis [Project][Paper][Code]. Here is also a great tutorial on Keras.ion on this &lt;a href=&#34;https://keras.io/examples/vision/nerf/&#34;&gt;https://keras.io/examples/vision/nerf/&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;learning-resources&#34;&gt;Learning resources&lt;/h2&gt;
+&lt;p&gt;We would like to share a few learning resources that helped us to learn 3D deep learning.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://keras.io/&#34;&gt;Keras.io&lt;/a&gt; has several 3D deep learning tutorials as mentioned above.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://towardsdatascience.com/how-to-represent-3d-data-66a0f6376afb&#34;&gt;How to represent 3D Data&lt;/a&gt; is an excellent post with more details on 3D data representation. &lt;a href=&#34;https://youtu.be/vfL6uJYFrp4&#34;&gt;3D Deep Learning Tutorial&lt;/a&gt; by the SU Lab at UCSD (University of San Diego) provides a great overview of 3D deep learning. The GitHub repo &lt;a href=&#34;https://github.com/timzhang642/3D-Machine-Learning#material_synthesis&#34;&gt;3D Machine Learning&lt;/a&gt; has a collection of 3D datasets, models and papers etc.&lt;/p&gt;
+&lt;p&gt;There are two 3D deep learning libraries: &lt;a href=&#34;https://github.com/google-research/google-research/tree/master/tf3d&#34;&gt;TensorFlow 3D&lt;/a&gt; and &lt;a href=&#34;https://pytorch3d.org/&#34;&gt;PyTorch3D&lt;/a&gt;. This blog post &lt;a href=&#34;http://ai.googleblog.com/2021/02/3d-scene-understanding-with-tensorflow.html&#34;&gt;3D Scene Understanding with TensorFlow 3D&lt;/a&gt; goes into details about TensorFlow 3D models. And these excellent &lt;a href=&#34;https://pytorch3d.org/tutorials/&#34;&gt;PyTorch3D tutorials&lt;/a&gt; have Colab notebooks that you can explore hands-on.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;This post provides an overview of 3D deep learning: the basic terminologies, 3D data representation and the various 3D computer vision tasks. We have shared a few learning resources which you may find helpful for getting started with 3D deep learning.&lt;/p&gt;
+&lt;h4 id=&#34;about-the-authors-&#34;&gt;About the authors —&lt;/h4&gt;
+&lt;p&gt;Margaret Maynard-Reid is an ML engineer, artist and aspiring 3D fashion designer. Nived PA is an undergraduate student of Computer Engineering from Amrita University.&lt;/p&gt;
+</description>
+      </item>
+      
+    
+      
+      <item>
         <title>The GSoC Experience</title>
         <link>https://nivedwho.github.io/blog/gsoc/</link>
         <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>

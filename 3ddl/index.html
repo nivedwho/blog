@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+    
+
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_128x128.png" sizes="128x128">
+
+    <title>
+      
+      
+         Intro to 3D Deep Learning 
+      
+    </title>
+    <link rel="canonical" href="https://nivedwho.github.io/blog/3ddl/">
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+    text-decoration-skip: ink;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .left-justify {
+    float: left;
+  }
+
+  .right-justify {
+    float:right;
+  }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, time {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content time {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(2) {
+    float:right;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+</style>
+
+
+    
+  </head>
+
+  <body>
+    <section id=nav>
+      <h1><a href="https://nivedwho.github.io/blog/">Nived&#39;s Archive</a></h1>
+      <ul>
+        
+          <li><a href="https://nivedwho.github.io/about">About</a></li>
+        
+          <li><a href="https://github.com/nivedwho">GitHub</a></li>
+        
+          <li><a href="https://nivedwho.github.io/">Homepage</a></li>
+        
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> Intro to 3D Deep Learning </h1>
+
+  
+    <div id=sub-header>
+      September 2022 · 7 minute read
+    </div>
+  
+
+  <div class="entry-content">
+    <p>An article written by <a href="https://www.linkedin.com/in/margaretmz/">Margaret Maynard-Reid (ML GDE)</a> and Me originally published in <a href="https://towardsdatascience.com/intro-to-3d-deep-learning-e992f7efa6ee">Towards Data Science</a>.</p>
+<p>3D deep learning is an interesting area with a wide range of real-world applications: art and design, self-driving cars, sports, agriculture, biology, robotics, virtual reality and augmented reality. This blog post provides an introduction to 3D deep learning: 3D data representations, computer vision tasks and learning resources.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dintro.png" alt="Image by author (Margaret)"></p>
+<h2 id="3d-data">3D Data</h2>
+<p>Data is super important for training machine learning models. One of the biggest differences between 2D and 3D deep learning is the data representation format.</p>
+<p>Regular images are typically represented in 1D or 2D arrays. 3D images, on the other hand, can have different representation formats and here are a few most popular ones: multi-view, volumetric, point cloud, mesh and volumetric display. Let’s take a look at each data representation illustrated with images.</p>
+<h3 id="multi-view-images">Multi-view images</h3>
+<p>These can be captured by positioning multiple cameras that take photos from different angles of the same object or scene. Here is what a chair looks like with images from ShapeNet which is a richly-annotated, large-scale repository of shapes represented by 3D CAD models of objects.
+<img src="https://nivedwho.github.io/blog/images/3dmultiview.gif" alt="multiview"></p>
+<h3 id="point-cloud">Point cloud</h3>
+<p>In a point cloud dataset, each image is represented by a set of points (x, y, z coordinates), which are collected from raw sensors. Point cloud data are typically captured by LiDAR sensors or converted from mesh data.</p>
+<p>Here is what a chair looks like in Point cloud representation from the <a href="https://modelnet.cs.princeton.edu/">ModelNet10</a> dataset.</p>
+<p><img src="https://nivedwho.github.io/blog/images/mnet10.png" alt="multiview"></p>
+<h3 id="mesh">Mesh</h3>
+<p>A mesh is the typical building block for 3D modeling with software such as Blender, Autodesk Maya or Unreal Engine etc. Unlike in point cloud where each 3D object is made of points, the mesh representation consists of a set of points and in addition the relationship of these points (edges) and faces. One type of mesh is polygon mesh with faces in the shape of triangles or quads.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dmesh.png" alt="Image by author (Margaret)"></p>
+<h3 id="volumetric-display">Volumetric display</h3>
+<p>In the volumetric representation, each image is solid and made of voxels: the 3D equivalent of pixels in 2D images.</p>
+<p>3D modeling software such as Blender can be used to voxelize 3D models and here is an example of a voxelized bunny:</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dvolume.png" alt="Image by author (Margaret)"></p>
+<p>Volumetric representation can be obtained with real-time scanning or converted from 3D point cloud or meshes. Here is an example from scan-net.org, which has RGB-D scans of indoor scenes with semantic voxel labeling.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dvolume2.png" alt="Image from scan-net.org/"></p>
+<h2 id="3d-computer-vision-tasks">3D Computer Vision Tasks</h2>
+<p>Just like 2D computer vision, 3D tasks include image classification, segmentation, pose estimation and image synthesis with generative models. Below we will go over a few examples of these tasks. And since 3D data has so many different representations, note that the examples we mention below likely will only cover some of the 3D data formats.</p>
+<h3 id="3d-image-classification">3D Image Classification</h3>
+<p>Image classification is a well-solved problem in both 2D and 3D computer vision.</p>
+<p>3D data classification involves the task of identifying a single 3D or multiple 3D objects present in a scene. It would enable us to recognize and identify objects by capturing their shape, size, orientation etc. which is vital when dealing with real-world applications such as augmented reality (AR), self-driving cars, and robotics.</p>
+<p>This task is similar to 2D image classification with the differences lying in the model architecture. VoxNet (2015) was one of the initial works that made use of 3D CNNs for single 3D object detection. It takes in 3D volume data or a sequence of 2D frames as inputs and applies a 3D kernel for convolution operation. 3D CNNs are a powerful model for learning representations for volumetric data. More recent works such as SampleNet (2020) introduces techniques to sample point clouds which include points representing a visual scene, resulting in improved classification performance as well as for other tasks such as 3D reconstruction.</p>
+<p>Here is a great tutorial on Keras.io for learning 3D image classification: <a href="https://keras.io/examples/vision/pointnet/">Point Cloud Classification with PointNet.</a></p>
+<h3 id="3d-object-detection--tracking">3D Object Detection &amp; Tracking</h3>
+<p>Object detection and tracking in 3D is similar to the task in 2D but with additional challenges. 3D object detection task we work with either voxels or points.</p>
+<p>3D object detection and tracking is very useful in self-driving cars. We can use RGB images, point cloud data or fused data input from both camera and sensor (LiDAR) point clouds to train 3D object detection and tracking.</p>
+<p>Object detection and tracking can also be used in augmented reality to superimpose virtual items into the real world scenes.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dobjectdet.gif" alt="Image"></p>
+<h3 id="3d-image-segmentation">3D Image Segmentation</h3>
+<p>As in 2D image segmentation tasks, 3D image segmentation also includes semantic, instance and part segmentation.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dseg.png" alt="3d segment"></p>
+<p>Depending on the 3D data representation, different techniques are utilized for the segmentation task. Some of the popular 3D dataset for segmentation includes ScanNet, ShapeNet and Semantic3D.</p>
+<p>Some applications of 3D segmentation include using drones for scene analysis, 3D map reconstruction, and medical diagnosis. Interestingly, semantic segmentation also helps with depth estimation.</p>
+<h3 id="3d-pose-estimation">3D Pose Estimation</h3>
+<p>3D pose estimation is a process involving the prediction of the actual spatial positioning of a 3D object from a 2D image given as input. Once we obtain information such as 3D rotation and translation of an object in 2D image, we can transform it into 3D space. This problem is highly active in the field of robotics. A robot might be able to see various objects using a camera, but merely seeing an object is not enough to actually grasp it.</p>
+<p>For tackling this problem, usually a number of significant features known as keypoints are detected, identified and tracked for each object. One of the early works addressing this problem is by Shubham Tulsiani et.al (2015), where they have introduced a CNN based approach for reliably predicting both viewpoints and keypoints of an object from a 2D image.</p>
+<p><img src="https://nivedwho.github.io/blog/images/3dpose.png" alt="3d pose"></p>
+<p>Other important applications of 3D pose estimation include augmented reality and virtual try-on in fashion.</p>
+<h3 id="3d-image-reconstruction">3D Image Reconstruction</h3>
+<p>3D Image Reconstruction involves the task of understanding the 3D structure and orientation of an image from keypoints, segmentation, depth maps and other forms of data representing knowledge of the 3D model. With the abundance of data, deep learning based techniques have also been popular in solving this problem. These works are based on different models such as CNNs, RNNs, Transformers, VAEs and GANs.</p>
+<h4 id="multi-view-reconstruction">Multi-view reconstruction</h4>
+<p>This is a task of reconstructing the 3D view of an object using a collection of 2D images representing the scene. The deep learning model based on this technique extracts useful information from the images and explores the relationship between the different views.</p>
+<h4 id="single-view-reconstruction">Single-view reconstruction</h4>
+<p>In single view reconstruction the 3D view of the object is done using a single 2D image. This is a much more complex task that requires the model to infer geometrical structure and visual features such as texture and shading, just from an image representing a single view of the object. However there has been numerous research in the field such as GAN2Shape, PHORUM that has demonstrated success in generating photorealistic 3D structures with accurate color, texture and shading representations.</p>
+<h4 id="3d-reconstruction-with-nerf">3D reconstruction with NeRF</h4>
+<p>NeRF explores the task of 3D reconstruction using a single continuous 5D coordinate as inputs. The coordinate represents the spatial location and the viewing directions. It outputs the volume density and the view dependent RGB color at the given location. This minimizes the error that is introduced when rendering multiple images which was previously used for 3d reconstruction tasks.</p>
+<p>This concept was introduced by the paper: Representing Scenes as Neural Radiance Fields for View Synthesis [Project][Paper][Code]. Here is also a great tutorial on Keras.ion on this <a href="https://keras.io/examples/vision/nerf/">https://keras.io/examples/vision/nerf/</a>.</p>
+<h2 id="learning-resources">Learning resources</h2>
+<p>We would like to share a few learning resources that helped us to learn 3D deep learning.</p>
+<p><a href="https://keras.io/">Keras.io</a> has several 3D deep learning tutorials as mentioned above.</p>
+<p><a href="https://towardsdatascience.com/how-to-represent-3d-data-66a0f6376afb">How to represent 3D Data</a> is an excellent post with more details on 3D data representation. <a href="https://youtu.be/vfL6uJYFrp4">3D Deep Learning Tutorial</a> by the SU Lab at UCSD (University of San Diego) provides a great overview of 3D deep learning. The GitHub repo <a href="https://github.com/timzhang642/3D-Machine-Learning#material_synthesis">3D Machine Learning</a> has a collection of 3D datasets, models and papers etc.</p>
+<p>There are two 3D deep learning libraries: <a href="https://github.com/google-research/google-research/tree/master/tf3d">TensorFlow 3D</a> and <a href="https://pytorch3d.org/">PyTorch3D</a>. This blog post <a href="http://ai.googleblog.com/2021/02/3d-scene-understanding-with-tensorflow.html">3D Scene Understanding with TensorFlow 3D</a> goes into details about TensorFlow 3D models. And these excellent <a href="https://pytorch3d.org/tutorials/">PyTorch3D tutorials</a> have Colab notebooks that you can explore hands-on.</p>
+<h2 id="summary">Summary</h2>
+<p>This post provides an overview of 3D deep learning: the basic terminologies, 3D data representation and the various 3D computer vision tasks. We have shared a few learning resources which you may find helpful for getting started with 3D deep learning.</p>
+<h4 id="about-the-authors-">About the authors —</h4>
+<p>Margaret Maynard-Reid is an ML engineer, artist and aspiring 3D fashion designer. Nived PA is an undergraduate student of Computer Engineering from Amrita University.</p>
+
+  </div>
+</section>
+
+  
+</body>
+</html>
+
+
+
