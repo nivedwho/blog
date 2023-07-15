@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/favicon_128x128.png" sizes="128x128">
+
+    <title>
+      
+      
+         Summiting Hills using RL 
+      
+    </title>
+    <link rel="canonical" href="http://localhost:1313/rl/">
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+    text-decoration-skip: ink;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .left-justify {
+    float: left;
+  }
+
+  .right-justify {
+    float:right;
+  }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, time {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content time {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(2) {
+    float:right;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+</style>
+
+
+    
+  </head>
+
+  <body>
+    <section id=nav>
+      <h1><a href="http://localhost:1313/">Nived&#39;s Archive</a></h1>
+      <ul>
+        
+          <li><a href="https://nivedwho.github.io/about">About</a></li>
+        
+          <li><a href="https://github.com/nivedwho">GitHub</a></li>
+        
+          <li><a href="https://nivedwho.github.io/">Homepage</a></li>
+        
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> Summiting Hills using RL </h1>
+
+  
+    <div id=sub-header>
+      March 2021 · 2 minute read
+    </div>
+  
+
+  <div class="entry-content">
+    <p>Tensorflow solution for the <a href="https://gym.openai.com/envs/MountainCarContinuous-v0/">MountainCarContinuous-v0</a> problem.</p>
+<h1 id="the-problem">The Problem</h1>
+<p>This was the first time I tried solving an OpenAI Gym problem and this problem looked interesting and was easy to understand.</p>
+<p>The problem is about a car placed at the bottom of a hill and our goal is to write a program that helps the car climb the hill. But the car’s engine is not powerful enough to do this by itself hence we need to move the car back and forth until it gains sufficient momentum to climb the hill. Lesser the energy consumed, greater will be the score.</p>
+<p>The source code for the problem can be seen <a href="https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py">here.</a>.</p>
+<p>The reward is -1 for each step until the goal position (0.5)is reached. The code should stop after reaching the goal or after 200 iterations.</p>
+<h1 id="the-solution">The Solution</h1>
+<p>The first thing I did is explore the problem and see how the car is moving. For that all I had to do was to load the mountain car enviornment and call the “env.action_space.sample()” for getting the actions. This moves the car back and forth with the values specified in its <a href="https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py">source code.</a></p>
+<p>After 200 iterations code stopped and the car obviously was unable to climb the mountain. More importantly this lets us see the data generated by the car - position, velocity and its relation with the reward.</p>
+<p><img src="https://github.com/nivedwho/Images/blob/main/dumbcar.gif?raw=true" alt="dumb car"></p>
+<p>Before implementing a neural network we need sufficient data from which the car can learn to move correctly. To do this I have implemented the function “model_data_preperation” that randomly moves the car using the 3 actions- 0(move left), 1(rest) and 2(move right). Instead of setting the reward -1 for all actions, it is set as 1 if the car’s position is getting closer to the top of the mountain. Once the score is greater than -198 the data is added to the list of accepted score. Now we have generated the data that tells us what movements are beneficial for us and what all are not. The game is similarly played for 10000 times.</p>
+<p>Nextly I have made a sequencial model that learns from the generated data and it is trained.</p>
+<p>Again the car is made to move, only this time the actions are set by the trained model and the reward is set like it was at first, ie. always = -1 unless the goal position is reached.</p>
+<p><img src="https://github.com/nivedwho/Images/blob/main/smartcar.gif?raw=true" alt="smart car"></p>
+<p>Open the notebook in Google Colaboratory : <a href="https://colab.research.google.com/github/nivedwho/Colab/blob/main/mountain_car.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab"></a></p>
+
+  </div>
+</section>
+
+  
+</body>
+</html>
+
+
+
