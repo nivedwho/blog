@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+    
+
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://nivedwho.github.io/blog/favicon_128x128.png" sizes="128x128">
+
+    <title>
+      
+      
+         Do 2D GANs Know 3D Shape? 
+      
+    </title>
+    <link rel="canonical" href="https://nivedwho.github.io/blog/gan2shape/">
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+    text-decoration-skip: ink;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .left-justify {
+    float: left;
+  }
+
+  .right-justify {
+    float:right;
+  }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, time {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content time {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(2) {
+    float:right;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+</style>
+
+
+    
+  </head>
+
+  <body>
+    <section id=nav>
+      <h1><a href="https://nivedwho.github.io/blog/">Nived&#39;s Archive</a></h1>
+      <ul>
+        
+          <li><a href="https://nivedwho.github.io/about">About</a></li>
+        
+          <li><a href="https://github.com/nivedwho">GitHub</a></li>
+        
+          <li><a href="https://nivedwho.github.io/">Homepage</a></li>
+        
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> Do 2D GANs Know 3D Shape? </h1>
+
+  
+    <div id=sub-header>
+      January 2022 · 8 minute read
+    </div>
+  
+
+  <div class="entry-content">
+    <p>An article written by <a href="https://www.linkedin.com/in/margaretmz/">Margaret Maynard-Reid (ML GDE)</a> and Me originally submitted to <a href="https://iclr.cc/Conferences/2022/CallForBlogPosts">ICLR 2022 Blog Post Track.</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>In this blog post, we discuss the key points of the paper <a href="https://arxiv.org/abs/2011.00844">“Do 2D GANs Know 3D Shape? Unsupervised 3D Shape Reconstruction from 2D Image GANs”</a> (GAN2Shape) by Pan et al. We will discuss both the theory and code in the author&rsquo;s <a href="https://github.com/XingangPan/GAN2Shape">GitHub repository</a> and use a demo Colab notebook to show how GAN2Shape is able to transform 2D images to 3D images in multiple view images format.</p>
+<p>The GAN2Shape paper presents the first attempt to directly mine 3D geometric cues from GANs trained on 2D RGB images. The technique can be used in very interesting real world scenarios such as image editing of relighting and object rotation after reconstructing 3D shapes from 2D images.</p>
+<p>The previous attempts of 3D reconstruction using GANs have a number of limitations such as requiring 2D keypoint or 3D annotations, heavy memory consumption because of reliance on explicitly modeling 3D representation and rendering during training, lower 3D image generation quality than 2D counterparts, or assumptions such as object shapes are symmetric.</p>
+<p>The GAN2Shape paper was the first attempt to reconstruct the 3D object shapes using GANs pretrained on 2D images only, without relying on the symmetry assumption of object shapes. It’s able to generate highly photo-realistic 3D-aware image manipulations: rotation and relighting without using external 3D models.</p>
+<h1 id="unsup3d">Unsup3D</h1>
+<p>Unsup3D is an unsupervised 3D reconstruction model proposed by <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Wu_Unsupervised_Learning_of_Probably_Symmetric_Deformable_3D_Objects_From_Images_CVPR_2020_paper.pdf">Shangzhe Wu et al.</a> in CVPR 2020 (Best Paper Award). It uses four individual autoencoder networks to decompose a single 2D image based on factors of view, lighting, depth and albedo, assuming they are symmetric. GAN2Shape adopts Unsup3D architecture and improves upon it  by making use of StyleGAN2 hich we will discuss in more detail below. GAN2Shape was a paper that kept Unsup3D as a benchmark for all the experiments.</p>
+<h1 id="how-gan2shape-works">How GAN2Shape Works?</h1>
+<p>Now that you have the background info on 3D deep learning and GAN variants related to the GAN2Shape paper, let’s take a look at how GAN2Shape works.</p>
+<p>The complex architecture and training of GAN2Shape can be broken down into three steps and we will be explaining the theory behind each of them. In addition, we will walk through its code implementation and add links to all the important modules and functions from the official <a href="https://github.com/XingangPan/GAN2Shape">GAN2Shape GitHub repository.</a></p>
+<h2 id="step-1-creating-pseudo-samples">Step 1: Creating Pseudo Samples</h2>
+<p>The first step in the GAN2Shape model architecture is the generation of pseudo samples. In this step, an input 2D image is passed onto 4 networks: view (V), light (L), depth (D) and albedo (A), and using the outputs of each of these networks we reconstruct a set of 2D images with different viewpoints and lighting conditions, which are referred to as pseudo samples. This method to recover 3D shape from a single view 2D image was introduced in Unsup3D by <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Wu_Unsupervised_Learning_of_Probably_Symmetric_Deformable_3D_Objects_From_Images_CVPR_2020_paper.pdf">Shangzhe Wu et al.</a> as mentioned above.</p>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_1.png" alt="step1"></p>
+<p>This problem of decomposing a 2D image to the four above-mentioned factors is an ill-posed one and hence we have to make an assumption inorder to solve it. So one thing we assume is that all objects including faces and cars have a convex shape prior, which provides a hint on initial viewpoint and lighting conditions.</p>
+<p>To implement this firstly the depth map is initialized with an ellipsoid shape. The function that predicts depth, albedo, viewpoint, lighting are implemented using individual neural networks:
+The depth and albedo are generated by encoder-decoder networks.
+The viewpoint and lighting are measured using simple encoder networks.</p>
+<p>In step 1 we only train the Albedo network, to optimize it we reconstruct the original input image from these four factors via a rendering process and then a reconstruction loss is also calculated by taking a weighted combination of L1 loss and Perceptual loss, introduced by Johnson et al.</p>
+<p>To create pseudo samples, we randomly sample different lighting directions and viewpoints along with the depth and albedo network outputs we have obtained. If our input is a 2D image of a face, the pseudo samples will contain a set of images that indicates how the lighting changes when the face is rotated at different angles.</p>
+<h2 id="step-2-obtain-projected-samples">Step 2: Obtain Projected Samples</h2>
+<p>The pseudo samples we have at this point are useful images showing different viewpoints of the image and indicate how the change in light affects the image but at the same time it consists of unnatural shadows, distortions, so our next step is to transform them into photorealistic images.</p>
+<p>This is where StyleGAN2 comes into picture. In step 2, we use a pretrained StyleGAN2 generator for GAN inversion and a pretrained StyleGAN2 discriminator for calculating the reconstruction loss in order to optimize the encoder network.</p>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_2.png" alt="step2"></p>
+<p>We perform GAN inversion to these pseudo samples and convert each sample into a latent vector using a standard ResNet encoder. These latent vectors are then projected back to their original space using the StyleGAN2 generator. This way we project the pseudo samples into a GAN image manifold making them more photorealistic, and these new samples are termed as projected samples.</p>
+<p>While performing GAN inversion the latent vectors obtained for the pseudo samples are added to the latent representation of the original input.This way we can make the generated images look much more realistic without actually changing other features such as face orientation and shading.</p>
+<p>To measure the difference between the generated projected samples and the input pseudo samples, we make use of a discriminator network similar to the one in StyleGAN2 architecture.  Both generated and original set of images are passed through the discriminator and the distance between the obtained features along with a regularization term is used as the reconstruction loss for this step. This method was proposed by Pan et al. The reconstruction loss further ensures that these generated samples will not have different lighting conditions and viewpoints compared to the pseudo samples.</p>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_eq1.png" alt="step2_2"></p>
+<p>The reconstruction objected for the encoder is represented in Eq.2, where G is the StyleGAN generator, E is the encoder  Ľ represents the distance metric which is used to calculate the loss between the generated and original input features. A regularization term is further added to prevent the latent offset from growing too large.</p>
+<h2 id="step-3-from-2d-to-3d">Step 3: From 2D to 3D</h2>
+<p>After Step 2 we have projected samples which are sets of photorealistic images of a particular object with multiple viewpoints and lighting conditions. To learn its 3D shape, we again make use of the four networks View, Light, Depth and Albedo used in Step 1.</p>
+<p>The main differences in Step 3 are that :</p>
+<ul>
+<li>View and Lighting conditions are predicted using the projected samples generated in Step 2, and the V and L encoder networks take the projected samples as the input.</li>
+<li>The reconstruction loss is computed in a different way compared to Step 1, and the loss is used to optimize all four networks.</li>
+<li>For generating the 3D view, viewpoint and lighting obtained from the projected samples are used for rendering, and the images generated at this stage are more photorealistic and better represents the 3D view of the input image.</li>
+</ul>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_3.png" alt="step3"></p>
+<p>In step 3 firstly the albedo and depth factors are predicted by the respective encoder-decoder networks using the original input. The viewpoint and lighting are predicted by the corresponding encoder networks using the projected samples generated in Step 2. All the 4 networks are jointly trained to reconstruct the original image and the reconstruction objective formulated in Eq.3, where I and Ĩ represents the original input image and the projected samples respectively. A smoothness loss is also added for overcoming gradient locality as proposed by Zho et al.</p>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_eq2.png" alt="step3_2"></p>
+<p>The four networks are similarly trained to render the 3D view of the input image, similar to how pseudo samples were generated in Step 1. These rendered sets of images are much more photorealistic in representing the 3D view compared to the pseudo samples.</p>
+<h2 id="iterative-self-refinement">Iterative self-refinement</h2>
+<p>One important note about this GAN2Shape model is that the training has more than one cycle of repeating the above 3 steps to transform a 2D image into a 3D image; however, those steps need to be repeated to refine the 3D image. The paper used four cycles (or stages) to repeat these 3 steps mentioned above.</p>
+<p>Another note about the process: The GAN2Shape model needs to be separately trained for each 2D input image, which involves repeating the 3 training steps discussed above for 4 cycles (or stages) and the output thus obtained would contain a set of images that can be used to construct a multi-view 3D image.</p>
+<h1 id="results">Results</h1>
+<p>The GAN2Shape model was successful in recovering 3D shapes from 2D images of numerous objects such as cars, buildings, human faces, cats etc. Prior to GAN2Shape, Unsup3D was the state of the art model for obtaining the 3D view of an input 2D image. But the model assumed every object to be symmetric and the lighting and textures were added accordingly to the 3D shape. GAN2Shape results showed that the model was successful even without the 3D assumption, producing a more realistic 3D view. The image below compares the performance of the two models.</p>
+<p><img src="https://nivedwho.github.io/blog/images/gan2shape_res.png" alt="res"></p>
+<p>GAN2Shape works well for images of human or cat faces where a convex shape prior provides a hint on the viewpoint and lighting condition, but fails when this is not the case. Due to this GAN2Shape was observed to not perform well on the LSUN horse dataset.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>In this post, we gave a brief introduction to 3D deep learning, GANs, StyleGAN2, and Unsup3D . Then we discussed in detail the key steps of GAN2Shape: how to transform a 2D image into 3D shapes, by using Unsup3D and StyleGAN2D. We demonstrated the training process with a Colab notebook to show the input image and the generated 3D images.</p>
+<p>In summary, GAN2Shape is able to generate 3D shapes from 2D images which are readily available, without any additional annotations, 3D models or assumptions of object symmetry, and provide better results than previous 3D construction GAN models.</p>
+
+  </div>
+</section>
+
+  
+</body>
+</html>
+
+
+
